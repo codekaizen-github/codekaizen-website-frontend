@@ -12,7 +12,7 @@ export default function Navigation() {
             <Link href="/" className="text-lg font-bold">CodeKaizen</Link>
         </div>
         <div className="hidden md:flex items-center space-x-4">
-            <Link href="/about" className="transform hover:scale-110 active:scale-90 transition-all duration-200">About</Link>
+            <Link href="/team" className="transform hover:scale-110 active:scale-90 transition-all duration-200">Team</Link>
             <Link href="/projects" className="transform hover:scale-110 active:scale-90 transition-all duration-200">Projects</Link>
         </div>
         <div className="md:hidden">
@@ -34,7 +34,7 @@ export default function Navigation() {
                 <path fillRule="evenodd" d="M6.29289 6.29289C6.68342 5.90237 7.31658 5.90237 7.70711 6.29289L12 10.5858L16.2929 6.29289C16.6834 5.90237 17.3166 5.90237 17.7071 6.29289C18.0976 6.68342 18.0976 7.31658 17.7071 7.70711L13.4142 12L17.7071 16.2929C18.0976 16.6834 18.0976 17.3166 17.7071 17.7071C17.3166 18.0976 16.6834 18.0976 16.2929 17.7071L12 13.4142L7.70711 17.7071C7.31658 18.0976 6.68342 18.0976 6.29289 17.7071C5.90237 17.3166 5.90237 16.6834 6.29289 16.2929L10.5858 12L6.29289 7.70711C5.90237 7.31658 5.90237 6.68342 6.29289 6.29289Z" clipRule="evenodd" />
                 </svg>
             </button>
-            <Link href="/about" className="text-2xl">About</Link>
+            <Link href="/team" className="text-2xl">Team</Link>
             <Link href="/projects" className="text-2xl">Projects</Link>
             </div>
         )}
