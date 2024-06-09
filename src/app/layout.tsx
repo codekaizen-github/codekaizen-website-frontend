@@ -21,7 +21,7 @@ export default function RootLayout({
         <div className="min-h-screen bg-[url(/zen-stone-garden.jpg)] bg-cover bg-center w-full overlay relative">
           <div className="relative">
             <Navigation />
-            <main className={`${raleway.className} p-4`}>{children}</main>
+            <main className={`${raleway.className} py-6 px-4`}>{children}</main>
           </div>
         </div>
       </body>

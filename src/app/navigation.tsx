@@ -9,7 +9,7 @@ export default function Navigation() {
     return (
         <nav className="relative flex items-center justify-between w-full p-4 bg-stone-200">
         <div className="flex items-center space-x-4">
-            <Link href="/" className="text-lg font-bold">改善 CodeKaizen</Link>
+            <Link href="/" className="text-lg">改善 CodeKaizen</Link>
         </div>
         <div className="hidden md:flex items-center space-x-4">
             <Link href="/team" className="hover-circle transform hover:scale-110 active:scale-90 transition-all duration-500">Team</Link>
