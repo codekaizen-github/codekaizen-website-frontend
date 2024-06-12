@@ -7,9 +7,9 @@ export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="relative flex items-center justify-between w-full p-4 bg-stone-200">
+        <nav className="relative flex items-center justify-between w-full p-4 bg-stone-200/[.7]">
         <div className="flex items-center space-x-4">
-            <Link href="/" className="text-lg">改善 CodeKaizen</Link>
+            <Link href="/" className="flex items-center"><span className="text-xs mr-1">改善</span> CodeKaizen</Link>
         </div>
         <div className="hidden md:flex items-center space-x-4">
             <Link href="/team" className="hover-circle transform hover:scale-110 active:scale-90 transition-all duration-500">Team</Link>
