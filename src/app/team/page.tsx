@@ -36,22 +36,22 @@ export default function About() {
 
     return (
         <>
-            <h1 className="text-stone-700 text-3xl font-semibold pb-6">Meet Our Team</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <h1 className="text-neutral-100 text-3xl font-semibold pb-6">Meet Our Team</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {teamMembers.map((member) => (
-                    <div key={member.name} className="bg-stone-200/[0.7] p-4 rounded-lg">
+                    <div key={member.name} className="bg-neutral-800 p-4 rounded-lg">
                         {member.photoUrl &&
                             <Image src={member.photoUrl} alt={member.name} width={200} height={200} className="rounded-full mr-auto ml-auto mb-4" />
                         }
                         <div className="flex">
                             <div>
-                                <h2 className="text-stone-700 text-xl font-semibold">{member.name}</h2>
-                                <p className="text-stone-700 text-lg">{member.role}</p>
-                                <p className="text-stone-700">{member.shortBio}</p>
+                                <h2 className="text-neutral-300 text-xl font-semibold">{member.name}</h2>
+                                <p className="text-neutral-300 text-lg">{member.role}</p>
+                                <p className="text-neutral-300">{member.shortBio}</p>
                             </div>
                             <div className="flex items-center">
-                                <Link href={`/team/${member.slug}`} className="hover-circle transform hover:scale-110 active:scale-90 transition-all duration-500">
-                                    <FontAwesomeIcon icon={faAngleRight} className="text-stone-700 font-lg" size="lg" />
+                                <Link href={`/team/${member.slug}`} className="">
+                                    <FontAwesomeIcon icon={faAngleRight} className="text-neutral-300 font-lg" size="lg" />
                                 </Link>
                             </div>
                         </div>

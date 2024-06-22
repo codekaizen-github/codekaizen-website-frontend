@@ -37,7 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## TODO
 
-- Create template for team page
 - Create template for projects page
 - Create template for team member pages
 - Create template for project pages

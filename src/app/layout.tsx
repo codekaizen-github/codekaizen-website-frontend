@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
+import { Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import Navigation from "./navigation";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -7,7 +7,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 
 config.autoAddCss = false;
 
-const raleway = Raleway({ subsets: ["latin"] });
+const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "CodeKaizen",
@@ -21,12 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen flex-col items-center justify-between text-stone-700">
-        <div className="min-h-screen bg-[url(/zen-stone-garden.jpg)] bg-cover bg-center w-full overlay relative">
-          <div className="relative">
-            <Navigation />
-            <main className={`${raleway.className} py-6 px-4`}>{children}</main>
-          </div>
+      <body className="min-h-screen text-neutral-100 bg-neutral-900">
+        <div className={`${sourceCodePro.className} relative`}>
+          <Navigation />
+          <main className="py-6 px-4">{children}</main>
         </div>
       </body>
     </html>

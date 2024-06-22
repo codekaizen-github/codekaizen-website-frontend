@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,41 +24,14 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+.retro-amber {
+  color: #FFBF00;
 }
 
-.hover-circle {
-  position: relative;
-}
-
-.hover-circle::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgb(165 180 252);
-  opacity: 0;
-  transition: opacity 1s ease;
-  z-index: -1;
-  filter: blur(10px);
-  transform: translate(-50%, -50%); /* Centers the circle */
-}
-
-.hover-circle:hover::before {
-  opacity: 1;
-}
-
-.overlay::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(231, 229, 228, 0.7);
-  /* background: rgba(28, 25, 23, 0.5); */
+.retro-green {
+  color: #00FF00;
 }
 
 @layer utilities {
