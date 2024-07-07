@@ -36,7 +36,7 @@ export default function About() {
 
     return (
         <>
-            <h1 className="text-neutral-100 text-3xl font-semibold pb-6">Meet Our Team</h1>
+            <h1 className="text-3xl font-semibold pb-6">Meet Our Team</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {teamMembers.map((member) => (
                     <div key={member.name} className="bg-neutral-800 p-4 rounded-lg">
@@ -45,13 +45,13 @@ export default function About() {
                         }
                         <div className="flex">
                             <div>
-                                <h2 className="text-neutral-300 text-xl font-semibold">{member.name}</h2>
-                                <p className="text-neutral-300 text-lg">{member.role}</p>
-                                <p className="text-neutral-300">{member.shortBio}</p>
+                                <h2 className="text-xl font-semibold">{member.name}</h2>
+                                <p className="text-lg">{member.role}</p>
+                                <p className="">{member.shortBio}</p>
                             </div>
                             <div className="flex items-center">
                                 <Link href={`/team/${member.slug}`} className="">
-                                    <FontAwesomeIcon icon={faAngleRight} className="text-neutral-300 font-lg" size="lg" />
+                                    <FontAwesomeIcon icon={faAngleRight} className="font-lg" size="lg" />
                                 </Link>
                             </div>
                         </div>

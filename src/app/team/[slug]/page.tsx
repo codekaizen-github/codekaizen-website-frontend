@@ -5,6 +5,6 @@ export default function TeamMember({ params }: { params: { slug: string } }) {
         notFound();
     }
     return (
-        <div className="text-neutral-100">Team member page for { params.slug }</div>
+        <div className="">Team member page for { params.slug }</div>
     );
 }

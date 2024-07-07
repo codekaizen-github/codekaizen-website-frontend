@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen text-neutral-100 bg-neutral-900">
+      <body className="min-h-screen retro-green bg-neutral-900">
         <div className={`${sourceCodePro.className} relative`}>
           <Navigation />
           <main className="py-6 px-4">{children}</main>
