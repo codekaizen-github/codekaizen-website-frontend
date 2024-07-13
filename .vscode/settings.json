@@ -1,0 +1,50 @@
+{
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true,
+    "todo-tree.highlights.defaultHighlight": {
+        "icon": "alert",
+        "type": "whole-line",
+        "opacity": 20,
+        "borderRadius": "10px",
+        "gutterIcon": true
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "check",
+            "foreground": "#b7a4f3",
+            "background": "#7560bc"
+        },
+        "FLAG": {
+            "icon": "report",
+            "foreground": "#e7a34c",
+            "background": "#a06a23"
+        },
+        "BUG": {
+            "icon": "bug",
+            "foreground": "#f4afaf",
+            "background": "#bf6767"
+        }
+    },
+    "todo-tree.general.tagGroups": {
+        "TODO": [
+            "TODO",
+            "@todo"
+        ]
+    },
+    "todo-tree.general.tags": [
+        "TODO",
+        "@todo",
+        "FLAG",
+        "BUG"
+    ],
+    "todo-tree.tree.expanded": true,
+    "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+    "todo-tree.regex.regex": "(//|/*|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
+    "todo-tree.filtering.excludeGlobs": [
+        "**/*.json",
+        "**/.devcontainer/**",
+        // Exclude node modules
+        "**/node_modules/**",
+        "**/.vscode/**"
+    ]
+}
