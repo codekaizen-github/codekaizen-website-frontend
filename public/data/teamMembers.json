@@ -1,0 +1,22 @@
+[
+	{
+		"id": 1,
+		"name": "Andrew Dawes",
+		"slug": "andrew-dawes"
+	},
+	{
+		"id": 2,
+		"name": "Missie Dawes",
+		"slug": "missie-dawes"
+	},
+	{
+		"id": 3,
+		"name": "Logan Sauers",
+		"slug": "logan-sauers"
+	},
+	{
+		"id": 4,
+		"name": "Kaitlyn Wyland",
+		"slug": "kaitlyn-wyland"
+	}
+]
