@@ -8,6 +8,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
+    const closeMenu = () => setIsOpen(false);
 
     return (
         <nav className="relative flex items-center justify-between w-full p-4">
@@ -24,7 +25,7 @@ export default function Navigation() {
             </button>
         </div>
         {isOpen && (
-            <div className="fixed top-0 left-0 w-full h-full bg-neutral-900/[.95] z-50 flex flex-col items-center justify-center gap-6"
+            <div onClick={closeMenu} className="fixed top-0 left-0 w-full h-full bg-neutral-900/[.95] z-50 flex flex-col items-center justify-center gap-6"
             >
                 <FontAwesomeIcon icon={faXmark} onClick={() => setIsOpen(false)} className="absolute top-4 right-4 text-xl cursor-pointer" />
                 <Link href="/team" className="text-2xl">Team</Link>
