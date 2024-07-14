@@ -10,7 +10,7 @@ interface TeamMemberCardProps {
 
 export default function TeamMemberCard({ member }: TeamMemberCardProps) {
 	return (
-		<div key={member.id} className="bg-neutral-800 rounded-lg">
+		<div key={member.id} className="bg-neutral-800">
 			<div className="flex items-center h-full">
 				<div className="flex flex-wrap items-center py-4 pl-4 md:flex-nowrap">
 					{member.photoUrl && (
@@ -19,7 +19,7 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
 							alt={member.name}
 							width={150}
 							height={150}
-							className="rounded-full mb-4 h-40 w-40 md:mb-0 sm:mr-4"
+							className="mb-4 h-40 w-40 md:mb-0 sm:mr-4"
 						/>
 					)}
 					<div className="flex gap-4 mr-4">

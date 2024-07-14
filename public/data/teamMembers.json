@@ -5,7 +5,9 @@
 		"role": "The Sensei",
 		"description": "Andrew guides us with the wisdom of a thousand Google searches and the patience of a laptop during a software update.",
 		"photoUrl": "/andrew-dawes.jpg",
-		"slug": "andrew-dawes"
+		"slug": "andrew-dawes",
+		"githubUsername": "AndrewJDawes",
+		"bio": "Andrew Dawes is a software engineer with a passion for creating beautiful, user-friendly web applications. He has a background in education and a love for teaching and learning. Andrew is a full-stack developer with experience in Ruby on Rails, JavaScript, React, and Redux. He is a graduate of the Flatiron School's software engineering program and holds a Bachelor of Arts in English from the University of Georgia. Andrew is a lifelong learner who is always looking for new ways to grow and improve his skills."
 	},
 	{
 		"id": 2,
@@ -13,7 +15,8 @@
 		"role": "The Sage",
 		"description": "Missie creates user interfaces with the exhilaration of a yogi flowing through sun salutations.",
 		"photoUrl": "/missie-dawes.jpg",
-		"slug": "missie-dawes"
+		"slug": "missie-dawes",
+		"githubUsername": "missiedawes"
 	},
 	{
 		"id": 3,
@@ -21,13 +24,15 @@
 		"role": "The Ninja",
 		"description": "Logan pursues perfection with the exactness of a master swordsman, seeking answers with the patience of a monk in meditation.",
 		"photoUrl": "/logan-sauers.jpg",
-		"slug": "logan-sauers"
+		"slug": "logan-sauers",
+		"githubUsername": "logansauers"
 	},
 	{
 		"id": 4,
 		"name": "Kaitlyn Wyland",
 		"description": "Kaitlyn fearlessly tackles challenging projects with the boldness of a warrior, mastering tasks with a spirit as free as the wind.",
 		"role": "The Samurai",
-		"slug": "kaitlyn-wyland"
+		"slug": "kaitlyn-wyland",
+		"githubUsername": "kwyland22"
 	}
 ]

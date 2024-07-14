@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 import { getTeamMember } from "@/app/api/user";
 import { User } from "@interfaces/user";
+import Image from "next/image";
 
 export default function TeamMemberPage({
 	params,
@@ -27,6 +28,7 @@ export default function TeamMemberPage({
 			});
 	}, [params.slug]);
 
+	// TODO: Replace with a loading spinner
 	if (isLoading) {
 		return <div>Loading...</div>;
 	}
@@ -35,7 +37,29 @@ export default function TeamMemberPage({
 		return notFound();
 	}
 
-	return <div>{member?.name}</div>;
+	return (
+		<div>
+			<Image
+				src={member.photoUrl}
+				alt={member.name}
+				width={350}
+				height={350}
+				className="mb-4 h-60 w-60 mx-auto"
+			/>
+			<div>
+				<h1 className="text-2xl">{member.name}</h1>
+				<a
+					href={`https://github.com/${member.githubUsername}`}
+					target="_blank"
+				>
+					<p>@{member.githubUsername}</p>
+				</a>
+			</div>
+			<div>
+				<p>{member.bio}</p>
+			</div>
+		</div>
+	);
 
 	// TODO: Design team member page
 }
