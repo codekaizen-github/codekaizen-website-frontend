@@ -2,21 +2,32 @@
 	{
 		"id": 1,
 		"name": "Andrew Dawes",
+		"role": "The Sensei",
+		"description": "Andrew guides us with the wisdom of a thousand Google searches and the patience of a laptop during a software update.",
+		"photoUrl": "/andrew-dawes.jpg",
 		"slug": "andrew-dawes"
 	},
 	{
 		"id": 2,
 		"name": "Missie Dawes",
+		"role": "The Sage",
+		"description": "Missie creates user interfaces with the exhilaration of a yogi flowing through sun salutations.",
+		"photoUrl": "/missie-dawes.jpg",
 		"slug": "missie-dawes"
 	},
 	{
 		"id": 3,
 		"name": "Logan Sauers",
+		"role": "The Ninja",
+		"description": "Logan pursues perfection with the exactness of a master swordsman, seeking answers with the patience of a monk in meditation.",
+		"photoUrl": "/logan-sauers.jpg",
 		"slug": "logan-sauers"
 	},
 	{
 		"id": 4,
 		"name": "Kaitlyn Wyland",
+		"description": "Kaitlyn fearlessly tackles challenging projects with the boldness of a warrior, mastering tasks with a spirit as free as the wind.",
+		"role": "The Samurai",
 		"slug": "kaitlyn-wyland"
 	}
 ]

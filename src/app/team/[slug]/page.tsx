@@ -2,31 +2,40 @@
 
 import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
-import { fetchUserData } from "@/app/api/cms";
+import { getTeamMember } from "@/app/api/user";
 import { User } from "@interfaces/user";
 
-export default function TeamMember({ params }: { params: { slug: string } }) {
-	const [user, setUser] = useState<User | null>(null);
+export default function TeamMemberPage({
+	params,
+}: {
+	params: { slug: string };
+}) {
+	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState<Error | null>(null);
+	const [member, setMember] = useState<User | null>(null);
 
 	useEffect(() => {
-		fetchUserData(params.slug)
-			.then(setUser)
+		setIsLoading(true);
+		getTeamMember(params.slug)
+			.then((member) => {
+				setMember(member);
+				setIsLoading(false);
+			})
 			.catch((e) => {
 				setError(e);
-				console.log(e);
+				setIsLoading(false);
 			});
 	}, [params.slug]);
 
-	if (error) {
-		return <div>Error: {error.message}</div>;
+	if (isLoading) {
+		return <div>Loading...</div>;
 	}
 
-	if (!user) {
-		notFound();
+	if (error || !member) {
+		return notFound();
 	}
+
+	return <div>{member?.name}</div>;
 
 	// TODO: Design team member page
-
-	return <div className="">Team member page for {user.name}</div>;
 }

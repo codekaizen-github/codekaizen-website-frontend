@@ -5,7 +5,7 @@ import { faDumbbell } from "@fortawesome/free-solid-svg-icons/faDumbbell";
 import { faTree } from "@fortawesome/free-solid-svg-icons/faTree";
 import { faArrowsUpDownLeftRight } from "@fortawesome/free-solid-svg-icons/faArrowsUpDownLeftRight";
 
-export default function Home() {
+export default function HomePage() {
 	// TODO: Design home page
 
 	return (
