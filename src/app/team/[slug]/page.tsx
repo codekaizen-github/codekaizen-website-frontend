@@ -44,13 +44,14 @@ export default function TeamMemberPage({
 				alt={member.name}
 				width={350}
 				height={350}
-				className="mb-6 h-60 w-60 mx-auto"
+				className="mb-6 h-70 w-70 mx-auto"
 			/>
 			<div>
 				<h1 className="text-2xl">{member.name}</h1>
 				<a
 					href={`https://github.com/${member.githubUsername}`}
 					target="_blank"
+					className="text-retro-blue hover:text-retro-darkBlue"
 				>
 					<p>@{member.githubUsername}</p>
 				</a>

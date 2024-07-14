@@ -11,18 +11,6 @@
 	--retro-darkYellow: #c7c400;
 }
 
-html {
-	color: var(--retro-green);
-}
-
-a {
-	color: var(--retro-blue);
-}
-
-a:hover {
-	color: var(--retro-darkBlue);
-}
-
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;

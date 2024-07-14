@@ -22,10 +22,16 @@ export default function Navigation() {
 				</Link>
 			</div>
 			<div className="hidden md:flex items-center space-x-4">
-				<Link href="/team" className="">
+				<Link
+					href="/team"
+					className="text-retro-blue hover:text-retro-darkBlue"
+				>
 					Team
 				</Link>
-				<Link href="/projects" className="">
+				<Link
+					href="/projects"
+					className="text-retro-blue hover:text-retro-darkBlue"
+				>
 					Projects
 				</Link>
 			</div>
@@ -47,10 +53,16 @@ export default function Navigation() {
 						onClick={() => setIsOpen(false)}
 						className="absolute top-4 right-4 text-2xl cursor-pointer text-retro-blue hover:text-retro-darkBlue"
 					/>
-					<Link href="/team" className="text-2xl">
+					<Link
+						href="/team"
+						className="text-2xl text-retro-blue hover:text-retro-darkBlue"
+					>
 						Team
 					</Link>
-					<Link href="/projects" className="text-2xl">
+					<Link
+						href="/projects"
+						className="text-2xl text-retro-blue hover:text-retro-darkBlue"
+					>
 						Projects
 					</Link>
 				</div>

@@ -20,7 +20,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className="text-retro-green">
 			<body className="min-h-screen bg-neutral-900">
 				<div className={`${sourceCodePro.className} relative`}>
 					<Navigation />

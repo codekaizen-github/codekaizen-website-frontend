@@ -10,25 +10,29 @@ export default function HomePage() {
 
 	return (
 		<>
-			<h1 className="text-6xl text-center mb-6">CodeKaizen</h1>
-			<p>
-				<FontAwesomeIcon icon={faArrowsUpDownLeftRight} /> Innovation
-				over invention
-			</p>
-			<p>
-				<FontAwesomeIcon icon={faTree} /> Sustainability over speed
-			</p>
-			<p>
-				<FontAwesomeIcon icon={faPeopleCarryBox} /> Unity over
-				individualism
-			</p>
-			<p>
-				<FontAwesomeIcon icon={faChessRook} /> Play over pressure
-			</p>
-			<p>
-				<FontAwesomeIcon icon={faDumbbell} /> Ritualism over
-				monumentalism
-			</p>
+			<h1 className="text-9xl text-center mb-6">++</h1>
+			<div>
+				<h2 className="text-5xl">
+					{/* <FontAwesomeIcon icon={faArrowsUpDownLeftRight} />{" "} */}
+					Innovation over invention
+				</h2>
+				<h2>
+					{/* <FontAwesomeIcon icon={faTree} /> */}
+					Sustainability over speed
+				</h2>
+				<h2>
+					{/* <FontAwesomeIcon icon={faPeopleCarryBox} /> */}
+					Unity over individualism
+				</h2>
+				<h2>
+					{/* <FontAwesomeIcon icon={faChessRook} /> */}
+					Play over pressure
+				</h2>
+				<h2>
+					{/* <FontAwesomeIcon icon={faDumbbell} /> */}
+					Ritualism over monumentalism
+				</h2>
+			</div>
 		</>
 	);
 }
