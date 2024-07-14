@@ -24,7 +24,7 @@ export default function RootLayout({
 			<body className="min-h-screen bg-neutral-900">
 				<div className={`${sourceCodePro.className} relative`}>
 					<Navigation />
-					<main className="py-6 px-4">{children}</main>
+					<main className="p-8">{children}</main>
 				</div>
 			</body>
 		</html>

@@ -35,7 +35,7 @@ export default function TeamPage() {
 
 	return (
 		<>
-			<h1 className="text-3xl font-semibold pb-6">Meet Our Team</h1>
+			<h1 className="text-xl pb-6">Meet Our Team</h1>
 			<div className="gap-4 grid grid-cols-1 lg:grid-cols-2">
 				{teamMembers?.map((member) => (
 					<TeamMemberCard key={member.id} member={member} />

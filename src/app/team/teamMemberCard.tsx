@@ -34,7 +34,7 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
 				</div>
 				<Link
 					href={`/team/${member.slug}`}
-					className="flex items-center h-full p-4 rounded-r-lg hover:bg-neutral-700 hover:cursor-pointer"
+					className="flex items-center h-full p-4 hover:bg-neutral-700 hover:cursor-pointer"
 				>
 					<FontAwesomeIcon
 						icon={faAngleRight}

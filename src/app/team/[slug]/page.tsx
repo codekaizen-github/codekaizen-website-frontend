@@ -44,7 +44,7 @@ export default function TeamMemberPage({
 				alt={member.name}
 				width={350}
 				height={350}
-				className="mb-4 h-60 w-60 mx-auto"
+				className="mb-6 h-60 w-60 mx-auto"
 			/>
 			<div>
 				<h1 className="text-2xl">{member.name}</h1>
@@ -54,10 +54,9 @@ export default function TeamMemberPage({
 				>
 					<p>@{member.githubUsername}</p>
 				</a>
+				<p className="mt-4">{member.bio}</p>
 			</div>
-			<div>
-				<p>{member.bio}</p>
-			</div>
+			<div></div>
 		</div>
 	);
 

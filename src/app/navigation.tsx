@@ -11,32 +11,30 @@ export default function Navigation() {
 	const closeMenu = () => setIsOpen(false);
 
 	return (
-		<nav className="relative flex items-center justify-between w-full p-4">
+		<nav className="relative flex items-center justify-between w-full p-4 text-xl border-b border-dashed border-retro-green">
 			<div className="flex items-center space-x-4">
 				<Link
 					href="/"
 					className="flex items-center text-retro-green hover:text-retro-darkGreen"
 				>
-					<span className="text-xs mr-1">++</span> CodeKaizen
+					<span className="text-xs mr-1">++</span>
+					<span>CodeKaizen</span>
 				</Link>
 			</div>
 			<div className="hidden md:flex items-center space-x-4">
-				<Link
-					href="/team"
-					className="text-retro-green hover:text-retro-darkGreen"
-				>
+				<Link href="/team" className="">
 					Team
 				</Link>
-				<Link
-					href="/projects"
-					className="text-retro-green hover:text-retro-darkGreen"
-				>
+				<Link href="/projects" className="">
 					Projects
 				</Link>
 			</div>
 			<div className="md:hidden">
 				<button onClick={() => setIsOpen(!isOpen)}>
-					<FontAwesomeIcon icon={faBars} className="text-xl" />
+					<FontAwesomeIcon
+						icon={faBars}
+						className="text-2xl text-retro-blue hover:text-retro-darkBlue"
+					/>
 				</button>
 			</div>
 			{isOpen && (
@@ -47,7 +45,7 @@ export default function Navigation() {
 					<FontAwesomeIcon
 						icon={faXmark}
 						onClick={() => setIsOpen(false)}
-						className="absolute top-4 right-4 text-xl cursor-pointer"
+						className="absolute top-4 right-4 text-2xl cursor-pointer text-retro-blue hover:text-retro-darkBlue"
 					/>
 					<Link href="/team" className="text-2xl">
 						Team
