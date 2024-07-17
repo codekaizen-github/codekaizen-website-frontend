@@ -11,6 +11,13 @@
 	--retro-darkYellow: #c7c400;
 }
 
+.code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+	font-feature-settings: normal;
+	font-variation-settings: normal;
+}
+
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
