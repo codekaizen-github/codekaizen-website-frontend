@@ -1,7 +1,7 @@
 "use client";
 
 import { notFound } from "next/navigation";
-import TeamMemberCard from "./teamMemberCard";
+import TeamMemberCard from "../partials/teamMemberCard";
 import { useEffect, useState } from "react";
 import { User } from "@interfaces/user";
 import { getTeamMembers } from "../api/user";

@@ -18,6 +18,27 @@
 	font-variation-settings: normal;
 }
 
+.cursor {
+	display: inline-block;
+	border-right: 4px solid white; /* Ensure the cursor is visible */
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.cursor-blink {
+	animation: blink-caret 1.2s step-end infinite;
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: white;
+	}
+}
+
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
