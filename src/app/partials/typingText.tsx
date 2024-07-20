@@ -11,16 +11,6 @@ const TypingText = ({ text }: TypingTextProps) => {
 	const [index, setIndex] = useState(0);
 	const [blinkCursor, setBlinkCursor] = useState(false);
 
-	// useEffect(() => {
-	// 	if (index < text.length) {
-	// 		const timeout = setTimeout(() => {
-	// 			setDisplayedText((prev) => prev + text.charAt(index));
-	// 			setIndex((prev) => prev + 1);
-	// 		}, 100);
-	// 		return () => clearTimeout(timeout);
-	// 	}
-	// }, [index, text]);
-
 	useEffect(() => {
 		if (index < text.length) {
 			const timeout = setTimeout(() => {

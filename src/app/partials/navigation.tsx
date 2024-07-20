@@ -21,18 +21,24 @@ export default function Navigation() {
 					<span>CodeKaizen</span>
 				</Link>
 			</div>
-			<div className="hidden md:flex items-center space-x-4">
+			<div className="hidden md:flex items-center space-x-4 gap-4">
 				<Link
 					href="/team"
 					className="text-retro-blue hover:text-retro-darkBlue"
 				>
-					Team
+					Team[]
 				</Link>
 				<Link
 					href="/projects"
 					className="text-retro-blue hover:text-retro-darkBlue"
 				>
-					Projects
+					Projects/
+				</Link>
+				<Link
+					href="/values"
+					className="text-retro-blue hover:text-retro-darkBlue"
+				>
+					Values.config
 				</Link>
 			</div>
 			<div className="md:hidden">
