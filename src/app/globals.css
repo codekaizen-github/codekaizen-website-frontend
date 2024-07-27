@@ -20,13 +20,17 @@
 
 .cursor {
 	display: inline-block;
-	border-right: 4px solid white; /* Ensure the cursor is visible */
+	border-right: 4px solid white;
 	white-space: nowrap;
 	overflow: hidden;
 }
 
 .cursor-blink {
 	animation: blink-caret 1.2s step-end infinite;
+}
+
+.cursor-hide {
+	border: 0px;
 }
 
 @keyframes blink-caret {

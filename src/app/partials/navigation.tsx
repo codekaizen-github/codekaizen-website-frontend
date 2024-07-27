@@ -11,7 +11,7 @@ export default function Navigation() {
 	const closeMenu = () => setIsOpen(false);
 
 	return (
-		<nav className="relative flex items-center justify-between w-full p-4 text-xl border-b border-dashed border-retro-green">
+		<nav className="relative flex items-center justify-between w-full py-4 px-8 text-xl border-b border-dashed border-retro-green">
 			<div className="flex items-center space-x-4">
 				<Link
 					href="/"

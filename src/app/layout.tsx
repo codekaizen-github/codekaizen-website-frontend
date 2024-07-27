@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "./partials/navigation";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import Footer from "./partials/footer";
 
 config.autoAddCss = false;
 
@@ -21,11 +22,14 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="text-retro-green">
-			<body className="min-h-screen bg-neutral-900">
-				<div className={`${sourceCodePro.className} relative`}>
+			<body
+				className={`${sourceCodePro.className} min-h-screen bg-neutral-900`}
+			>
+				<div className="relative">
 					<Navigation />
-					<main className="p-8">{children}</main>
+					<main className="p-8 min-h-screen">{children}</main>
 				</div>
+				<Footer />
 			</body>
 		</html>
 	);
