@@ -8,6 +8,10 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			animation: {
+				grow: "grow 3s infinite",
+				slide: "slide 3s infinite normal",
+			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
@@ -26,6 +30,18 @@ const config: Config = {
 				"retro-darkRed": "#c91b00",
 				"retro-yellow": "#fffc67",
 				"retro-darkYellow": "#c7c400",
+			},
+			keyframes: {
+				grow: {
+					"0%": { transform: "scale(0.4)" },
+					"33%": { transform: "scale(0.8)" },
+					"66%": { transform: "scale(1.2)" },
+					"100%": { transform: "scale(1.6)" },
+				},
+				slide: {
+					"0%": { transform: "translateX(-50px)" },
+					"100%": { transform: "translateX(50px)" },
+				},
 			},
 		},
 	},
