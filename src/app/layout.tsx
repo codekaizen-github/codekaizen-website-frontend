@@ -21,13 +21,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className="text-retro-green">
-			<body
-				className={`${sourceCodePro.className} min-h-screen bg-neutral-900`}
-			>
-				<div className="relative">
+		<html lang="en" className="text-retro-green min-h-screen">
+			<body className={`${sourceCodePro.className} bg-neutral-900`}>
+				<div className="relative main-content">
 					<Navigation />
-					<main className="p-8 min-h-screen">{children}</main>
+					<main className="p-8">{children}</main>
 				</div>
 				<Footer />
 			</body>
