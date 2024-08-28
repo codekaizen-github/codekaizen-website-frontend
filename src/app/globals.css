@@ -3,10 +3,16 @@
 @tailwind utilities;
 
 :root {
+	--retro-cyan: #60fdff;
+	--retro-darkCyan: #00c5c7;
 	--retro-blue: #6871ff;
-	--retro-darkBlue: #0225c7;
+	--retro-darkBlue: #5259c1;
 	--retro-green: #5ffa68;
 	--retro-darkGreen: #00c200;
+	--retro-purple: #ff77ff;
+	--retro-darkPurple: #ca30c7;
+	--retro-red: #ff6e67;
+	--retro-darkRed: #b63b28;
 	--retro-yellow: #fffc67;
 	--retro-darkYellow: #c7c400;
 }
@@ -16,6 +22,12 @@
 		"Liberation Mono", "Courier New", monospace;
 	font-feature-settings: normal;
 	font-variation-settings: normal;
+}
+
+.comment {
+	/* color: rgb(200, 200, 200); */
+	color: var(--retro-green);
+	/* font-style: italic; */
 }
 
 .cursor {
@@ -31,6 +43,10 @@
 
 .cursor-hide {
 	border: 0px;
+}
+
+.main-content {
+	min-height: calc(100vh - 128px);
 }
 
 @keyframes blink-caret {

@@ -11,14 +11,13 @@ export default function Navigation() {
 	const closeMenu = () => setIsOpen(false);
 
 	return (
-		<nav className="relative flex items-center justify-between w-full py-4 px-8 text-xl border-b border-dashed border-retro-green">
+		<nav className="relative flex items-center justify-between w-full py-4 px-8 border-b border-dashed border-retro-green">
 			<div className="flex items-center space-x-4">
 				<Link
 					href="/"
 					className="flex items-center text-retro-green hover:text-retro-darkGreen"
 				>
-					<span className="text-xs mr-1">++</span>
-					<span>CodeKaizen</span>
+					<span>++CodeKaizen</span>
 				</Link>
 			</div>
 			<div className="hidden md:flex items-center space-x-4 gap-4">

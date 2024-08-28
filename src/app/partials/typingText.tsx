@@ -36,72 +36,69 @@ export default function TypingText({ text }: TypingTextProps): JSX.Element {
 
 	useEffect(() => {
 		const handleTyping = () => {
-			if (width < 1024) {
-				if (currentLine < text.length) {
-					if (index < text[currentLine].length) {
-						setDisplayedText(
-							(prev) => prev + text[currentLine].charAt(index)
-						);
-						setIndex((prev) => prev + 1);
-					} else {
-						setTimeout(() => {
-							setLineTexts((prev) => [...prev, displayedText]);
-							setIndex(0);
-							setCurrentLine((prev) => prev + 1);
-							setDisplayedText("");
-						}, 150);
-					}
-				} else {
-					setTypingComplete(true);
-				}
-			} else {
-				if (index < text.join("").length) {
+			// if (width < 1024) {
+			if (currentLine < text.length) {
+				if (index < text[currentLine].length) {
 					setDisplayedText(
-						(prev) => prev + text.join("").charAt(index)
+						(prev) => prev + text[currentLine].charAt(index)
 					);
 					setIndex((prev) => prev + 1);
 				} else {
-					setTypingComplete(true);
+					setTimeout(() => {
+						setLineTexts((prev) => [...prev, displayedText]);
+						setIndex(0);
+						setCurrentLine((prev) => prev + 1);
+						setDisplayedText("");
+					}, 150);
 				}
+			} else {
+				setTypingComplete(true);
 			}
+			// }
+			// else {
+			// 	if (index < text.join("").length) {
+			// 		setDisplayedText(
+			// 			(prev) => prev + text.join("").charAt(index)
+			// 		);
+			// 		setIndex((prev) => prev + 1);
+			// 	} else {
+			// 		setTypingComplete(true);
+			// 	}
+			// }
 		};
 
 		const timeout = setTimeout(handleTyping, 100);
 		return () => clearTimeout(timeout);
 	}, [index, currentLine, text, width, displayedText]);
 
-	if (width < 1024) {
-		return (
-			<>
-				{lineTexts.map((line, idx) => (
-					<p
-						key={idx}
-						className={`${
-							typingComplete ? "cursor-blink" : "cursor-hide"
-						}`}
-					>
-						{line}
-					</p>
-				))}
-				{currentLine < text.length && (
-					<p
-						className={`cursor ${
-							typingComplete ? "cursor-blink" : ""
-						}`}
-					>
-						{displayedText}
-					</p>
-				)}
-			</>
-		);
-	}
-
+	// if (width < 1024) {
 	return (
-		<div className="typing-container">
-			<p className={typingComplete ? "cursor cursor-blink" : "cursor"}>
-				{displayedText}
-			</p>
-			<p className="sr-only">{text}</p>
-		</div>
+		<>
+			{lineTexts.map((line, idx) => (
+				<p
+					key={idx}
+					className={`${
+						typingComplete ? "cursor-blink" : "cursor-hide"
+					}`}
+				>
+					{line}
+				</p>
+			))}
+			{currentLine < text.length && (
+				<p className={`cursor ${typingComplete ? "cursor-blink" : ""}`}>
+					{displayedText}
+				</p>
+			)}
+		</>
 	);
+	// }
+
+	// return (
+	// 	<div className="typing-container">
+	// 		<p className={typingComplete ? "cursor cursor-blink" : "cursor"}>
+	// 			{displayedText}
+	// 		</p>
+	// 		<p className="sr-only">{text}</p>
+	// 	</div>
+	// );
 }
