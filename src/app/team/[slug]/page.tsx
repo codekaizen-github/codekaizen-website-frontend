@@ -55,7 +55,10 @@ export default function TeamMemberPage({
 				>
 					<p>@{member.githubUsername}</p>
 				</a>
-				<p className="mt-4">{member.bio}</p>
+				<div
+					dangerouslySetInnerHTML={{ __html: member.bio }}
+					className="mt-4 space-between-p"
+				/>
 			</div>
 			<div></div>
 		</div>

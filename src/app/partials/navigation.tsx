@@ -11,8 +11,8 @@ export default function Navigation() {
 	const closeMenu = () => setIsOpen(false);
 
 	return (
-		<nav className="relative flex items-center justify-between w-full py-4 px-8 border-b border-dashed border-retro-green">
-			<div className="flex items-center space-x-4">
+		<nav className="relative flex items-center justify-between w-full py-4 px-8">
+			<div className="flex items-center space-x-4 text-lg">
 				<Link
 					href="/"
 					className="flex items-center text-retro-green hover:text-retro-darkGreen"
@@ -20,7 +20,7 @@ export default function Navigation() {
 					<span>++CodeKaizen</span>
 				</Link>
 			</div>
-			<div className="hidden md:flex items-center space-x-4 gap-4">
+			<div className="hidden md:flex items-center space-x-4 gap-4 text-lg">
 				<Link
 					href="/team"
 					className="text-retro-blue hover:text-retro-darkBlue"

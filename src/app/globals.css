@@ -45,8 +45,24 @@
 	border: 0px;
 }
 
+.h1 {
+	font-size: calc(1.6rem + 3vw);
+}
+
+.h2 {
+	font-size: calc(1.5rem + 2vw);
+}
+
+.h3 {
+	font-size: calc(1.4rem + 1vw);
+}
+
 .main-content {
 	min-height: calc(100vh - 128px);
+}
+
+.space-between-p p:not(:first-child) {
+	margin-top: 1em;
 }
 
 @keyframes blink-caret {
