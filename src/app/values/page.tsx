@@ -4,52 +4,68 @@ import { faDumbbell } from "@fortawesome/free-solid-svg-icons/faDumbbell";
 import { faTree } from "@fortawesome/free-solid-svg-icons/faTree";
 import { faFootball } from "@fortawesome/free-solid-svg-icons/faFootball";
 import { faCog } from "@fortawesome/free-solid-svg-icons/faCog";
+import ValueCard from "../partials/valueCard";
 
 export default function ValuesPage() {
 	return (
-		<div className="text-center flex flex-col gap-8">
-			<div className="">
-				<FontAwesomeIcon icon={faCog} spin className="mb-3 text-2xl" />
-				<FontAwesomeIcon
-					icon={faCog}
-					spin
-					spinReverse
-					className="ml-1 mt-3 text-2xl"
-				/>
-				<div className="text-retro-purple text-4xl">Innovation</div>
-				<div className="text-2xl">over invention</div>
+		<>
+			<h1 className="text-3xl pb-6">Our Values</h1>
+			<div className="flex flex-col mx-auto gap-6 max-w-2xl">
+				<ValueCard>
+					<div>
+						<FontAwesomeIcon
+							icon={faCog}
+							spin
+							className="mb-3 text-2xl"
+						/>
+						<FontAwesomeIcon
+							icon={faCog}
+							spin
+							spinReverse
+							className="ml-1 mt-3 text-2xl"
+						/>
+					</div>
+					<div className="text-retro-purple text-3xl">Innovation</div>
+					<div className="text-2xl">over invention</div>
+				</ValueCard>
+				<ValueCard>
+					<FontAwesomeIcon
+						icon={faTree}
+						className="animate-grow text-2xl"
+					/>
+					<div className="text-retro-cyan text-3xl">
+						Sustainability
+					</div>
+					<div className="text-2xl">over speed</div>
+				</ValueCard>
+				<ValueCard>
+					<FontAwesomeIcon
+						icon={faPeopleCarryBox}
+						className="animate-slide text-2xl"
+					/>
+					<div className="text-retro-yellow text-3xl">Unity</div>
+					<div className="text-2xl">over individualism</div>
+				</ValueCard>
+				<ValueCard>
+					<FontAwesomeIcon
+						icon={faFootball}
+						bounce
+						className="text-2xl"
+					/>
+					<div className="text-retro-red text-3xl">Play</div>
+					<div className="text-2xl">over pressure</div>
+				</ValueCard>
+				<ValueCard>
+					<FontAwesomeIcon
+						icon={faDumbbell}
+						beat
+						className="text-2xl"
+					/>
+					<div className="text-retro-blue text-3xl">Ritualism</div>
+					<div className="text-2xl">over monumentalism</div>
+				</ValueCard>
 			</div>
-			<div className="">
-				<FontAwesomeIcon
-					icon={faTree}
-					className="animate-grow text-2xl"
-				/>
-				<div className="text-retro-cyan text-4xl">Sustainability</div>
-				<div className="text-2xl">over speed</div>
-			</div>
-			<div className="">
-				<FontAwesomeIcon
-					icon={faPeopleCarryBox}
-					className="animate-slide text-2xl"
-				/>
-				<div className="text-retro-yellow text-4xl">Unity</div>
-				<div className="text-2xl">over individualism</div>
-			</div>
-			<div className="">
-				<FontAwesomeIcon
-					icon={faFootball}
-					bounce
-					className="text-2xl"
-				/>
-				<div className="text-retro-red text-4xl">Play</div>
-				<div className="text-2xl">over pressure</div>
-			</div>
-			<div className="">
-				<FontAwesomeIcon icon={faDumbbell} beat className="text-2xl" />
-				<div className="text-retro-blue text-4xl">Ritualism</div>
-				<div className="text-2xl">over monumentalism</div>
-			</div>
-		</div>
+		</>
 	);
 }
 

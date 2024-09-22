@@ -1,7 +1,3 @@
 export default function ProjectsPage() {
-	// TODO: Design projects page
-
-	return <div className="">Projects page</div>;
+	return <h1 className="text-3xl pb-6">Our Projects</h1>;
 }
-
-// TODO: Create project page
