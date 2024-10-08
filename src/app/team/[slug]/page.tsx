@@ -63,6 +63,4 @@ export default function TeamMemberPage({
 			<div></div>
 		</div>
 	);
-
-	// TODO: Design team member page
 }
