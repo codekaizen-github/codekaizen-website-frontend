@@ -23,7 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="text-retro-green min-h-screen">
 			<body className={`${sourceCodePro.className} bg-neutral-900`}>
-				<div className="relative main-content">
+				<div className="relative main-content max-w-screen-lg m-auto">
 					<Navigation />
 					<main className="p-8">{children}</main>
 				</div>
