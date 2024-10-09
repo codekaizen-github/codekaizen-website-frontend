@@ -51,7 +51,6 @@ export default function TeamMemberPage({
 				<a
 					href={`https://github.com/${member.githubUsername}`}
 					target="_blank"
-					className="text-retro-blue hover:text-retro-darkBlue"
 				>
 					<p>@{member.githubUsername}</p>
 				</a>
