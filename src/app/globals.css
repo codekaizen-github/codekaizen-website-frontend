@@ -17,6 +17,24 @@
 	--retro-darkYellow: #c7c400;
 }
 
+a {
+	color: var(--retro-blue);
+}
+
+a:hover {
+	color: var(--retro-darkBlue);
+}
+
+ol {
+	list-style-type: decimal;
+	margin-left: 1.5rem;
+}
+
+ul {
+	list-style-type: disc;
+	margin-left: 1.5rem;
+}
+
 .code {
 	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
