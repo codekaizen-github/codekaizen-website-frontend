@@ -5,8 +5,8 @@ export default function Footer() {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className="bg-neutral-950 p-8">
-			<div className="">
+		<footer className="bg-neutral-950">
+			<div className="max-w-screen-lg m-auto p-8">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 text-center md:text-left gap-4">
 					<Tagline />
 					<div className="social-media md:text-right">
