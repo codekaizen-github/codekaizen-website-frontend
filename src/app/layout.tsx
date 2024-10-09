@@ -5,6 +5,7 @@ import Navigation from "./partials/navigation";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Footer from "./partials/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 config.autoAddCss = false;
 
@@ -25,7 +26,10 @@ export default function RootLayout({
 			<body className={`${sourceCodePro.className} bg-neutral-900`}>
 				<div className="relative main-content max-w-screen-lg m-auto">
 					<Navigation />
-					<main className="p-8">{children}</main>
+					<main className="p-8">
+						{children}
+						<Analytics />
+					</main>
 				</div>
 				<Footer />
 			</body>
