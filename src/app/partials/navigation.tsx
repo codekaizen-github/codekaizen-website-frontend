@@ -62,13 +62,19 @@ export default function Navigation() {
 						href="/team"
 						className="text-2xl text-retro-blue hover:text-retro-darkBlue"
 					>
-						Team
+						Team[]
 					</Link>
 					<Link
 						href="/projects"
 						className="text-2xl text-retro-blue hover:text-retro-darkBlue"
 					>
-						Projects
+						Projects/
+					</Link>
+					<Link
+						href="/values"
+						className="text-2xl text-retro-blue hover:text-retro-darkBlue"
+					>
+						Values.config
 					</Link>
 				</div>
 			)}
