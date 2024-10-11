@@ -1,37 +1,9 @@
-"use client";
-
-import { notFound } from "next/navigation";
 import TeamMemberCard from "../partials/teamMemberCard";
-import { useEffect, useState } from "react";
-import { User } from "@interfaces/user";
 import { getTeamMembers } from "../api/user";
 
-// TODO: Replace with async fetch
-export default function TeamPage() {
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState<Error | null>(null);
-	const [teamMembers, setTeamMembers] = useState<User[] | null>(null);
-
-	useEffect(() => {
-		setIsLoading(true);
-		getTeamMembers()
-			.then((teamMembers) => {
-				setTeamMembers(teamMembers);
-				setIsLoading(false);
-			})
-			.catch((e) => {
-				setError(e);
-				setIsLoading(false);
-			});
-	}, []);
-
-	if (isLoading) {
-		return <div>Loading...</div>;
-	}
-
-	if (error || !teamMembers) {
-		return notFound();
-	}
+export default async function TeamPage() {
+	let data = await getTeamMembers();
+	let teamMembers = data; // await data.json
 
 	return (
 		<>

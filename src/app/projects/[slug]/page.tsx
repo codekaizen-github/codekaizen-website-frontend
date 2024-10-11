@@ -1,34 +1,15 @@
-"use client";
-
 import { notFound } from "next/navigation";
-import { useState, useEffect } from "react";
 import { getProject } from "@/app/api/project";
-import { Project } from "@interfaces/project";
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState<Error | null>(null);
-	const [project, setProject] = useState<Project | null>(null);
+export default async function ProjectDetailPage({
+	params,
+}: {
+	params: { slug: string };
+}) {
+	let data = await getProject(params.slug as string);
+	let project = data; // await data.json
 
-	useEffect(() => {
-		setIsLoading(true);
-		getProject(params.slug)
-			.then((member) => {
-				setProject(member);
-				setIsLoading(false);
-			})
-			.catch((e) => {
-				setError(e);
-				setIsLoading(false);
-			});
-	}, [params.slug]);
-
-	// TODO: Replace with a loading spinner
-	if (isLoading) {
-		return <div>Loading...</div>;
-	}
-
-	if (error || !project) {
+	if (!project) {
 		return notFound();
 	}
 

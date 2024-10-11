@@ -1,41 +1,14 @@
-"use client";
-
 import { notFound } from "next/navigation";
-import { useState, useEffect } from "react";
 import { getTeamMember } from "@/app/api/user";
-import { User } from "@interfaces/user";
 import Image from "next/image";
 
-export default function TeamMemberPage({
+export default async function TeamMemberPage({
 	params,
 }: {
 	params: { slug: string };
 }) {
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState<Error | null>(null);
-	const [member, setMember] = useState<User | null>(null);
-
-	useEffect(() => {
-		setIsLoading(true);
-		getTeamMember(params.slug)
-			.then((member) => {
-				setMember(member);
-				setIsLoading(false);
-			})
-			.catch((e) => {
-				setError(e);
-				setIsLoading(false);
-			});
-	}, [params.slug]);
-
-	// TODO: Replace with a loading spinner
-	if (isLoading) {
-		return <div>Loading...</div>;
-	}
-
-	if (error || !member) {
-		return notFound();
-	}
+	let data = await getTeamMember(params.slug as string);
+	let member = data; // await data.json
 
 	return (
 		<div>
