@@ -19,3 +19,13 @@ export async function getTeamMember(slug: string): Promise<User> {
 	const user = data.find((user: any) => user.slug === slug);
 	return user;
 }
+
+/**
+ * @returns A promise that resolves to an array of slugs
+ * @description Fetches all user slugs from a CMS
+ */
+export async function getAllTeamMemberSlugs(): Promise<string[]> {
+	const data = require("/public/data/teamMembers.json");
+	const slugs = data.map((user: User) => user.slug);
+	return slugs;
+}

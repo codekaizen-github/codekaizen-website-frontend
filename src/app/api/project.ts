@@ -19,3 +19,13 @@ export async function getProject(slug: string): Promise<Project> {
 	const project = data.find((project: any) => project.slug === slug);
 	return project;
 }
+
+/**
+ * @returns A promise that resolves to an array of slugs
+ * @description Fetches all project slugs from a CMS
+ */
+export async function getAllProjectSlugs(): Promise<string[]> {
+	const data = require("/public/data/projects.json");
+	const slugs = data.map((project: Project) => project.slug);
+	return slugs;
+}

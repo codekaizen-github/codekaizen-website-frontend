@@ -1,14 +1,24 @@
-import { notFound } from "next/navigation";
-import { getTeamMember } from "@/app/api/user";
+import { getAllTeamMemberSlugs, getTeamMember } from "@/app/api/user";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
-export default async function TeamMemberPage({
-	params,
-}: {
+interface TeamMemberPageProps {
 	params: { slug: string };
-}) {
-	let data = await getTeamMember(params.slug as string);
-	let member = data; // await data.json
+}
+
+export async function generateStaticParams() {
+	const slugs = await getAllTeamMemberSlugs();
+	return slugs.map((slug) => ({
+		slug,
+	}));
+}
+
+export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
+	const member = await getTeamMember(params.slug);
+
+	if (!member) {
+		return notFound();
+	}
 
 	return (
 		<div>
@@ -32,7 +42,6 @@ export default async function TeamMemberPage({
 					className="mt-4 space-between-p"
 				/>
 			</div>
-			<div></div>
 		</div>
 	);
 }

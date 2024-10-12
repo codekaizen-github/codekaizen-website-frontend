@@ -1,13 +1,21 @@
 import { notFound } from "next/navigation";
-import { getProject } from "@/app/api/project";
+import { getAllProjectSlugs, getProject } from "@/app/api/project";
+
+interface ProjectDetailPageProps {
+	params: { slug: string };
+}
+
+export async function generateStaticParams() {
+	const slugs = await getAllProjectSlugs();
+	return slugs.map((slug) => ({
+		slug,
+	}));
+}
 
 export default async function ProjectDetailPage({
 	params,
-}: {
-	params: { slug: string };
-}) {
-	let data = await getProject(params.slug as string);
-	let project = data; // await data.json
+}: ProjectDetailPageProps) {
+	const project = await getProject(params.slug);
 
 	if (!project) {
 		return notFound();
