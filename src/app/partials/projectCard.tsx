@@ -33,6 +33,7 @@ export default function TeamMemberCard({ project }: ProjectCardProps) {
 					</div>
 				</div>
 				<Link
+					aria-label="View project"
 					href={`/projects/${project.slug}`}
 					className="flex items-center h-full p-4 hover:bg-neutral-700 hover:cursor-pointer text-retro-blue hover:text-retro-darkBlue"
 				>

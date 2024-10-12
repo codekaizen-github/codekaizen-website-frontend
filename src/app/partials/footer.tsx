@@ -10,18 +10,19 @@ export default function Footer() {
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 text-center md:text-left gap-4">
 					<Tagline />
 					<div className="social-media md:text-right">
-						<h4 className="">
+						<div>
 							Follow us on&nbsp;
 							<a
+								aria-label="codekaizen-github"
 								href="https://github.com/codekaizen-github"
 								className="text-retro-blue hover:text-retro-darkBlue"
 							>
 								GitHub
 							</a>
-						</h4>
+						</div>
 					</div>
 				</div>
-				<div className="footer-bottom mt-4 text-center text-neutral-500">
+				<div className="footer-bottom mt-4 text-center text-neutral-400">
 					<p>&copy; {currentYear} CodeKaizen. All rights reserved.</p>
 				</div>
 			</div>

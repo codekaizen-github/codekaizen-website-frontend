@@ -32,6 +32,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
 			<div>
 				<h1 className="text-2xl">{member.name}</h1>
 				<a
+					aria-label="View team member's GitHub profile"
 					href={`https://github.com/${member.githubUsername}`}
 					target="_blank"
 				>

@@ -19,6 +19,7 @@
 
 a {
 	color: var(--retro-blue);
+	text-decoration: underline dotted;
 }
 
 a:hover {
