@@ -5,7 +5,7 @@ import { User } from "@interfaces/user";
  * @description Fetches user data from a CMS
  */
 export async function getTeamMembers(): Promise<User[]> {
-	const data = require("/public/data/teamMembers.json");
+	const data = require("../../../public/data/teamMembers.json");
 	return data;
 }
 
@@ -15,7 +15,7 @@ export async function getTeamMembers(): Promise<User[]> {
  * @description Fetches user data from a CMS based on the slug
  */
 export async function getTeamMember(slug: string): Promise<User> {
-	const data = require("/public/data/teamMembers.json");
+	const data = require("../../../public/data/teamMembers.json");
 	const user = data.find((user: any) => user.slug === slug);
 	return user;
 }
@@ -25,7 +25,7 @@ export async function getTeamMember(slug: string): Promise<User> {
  * @description Fetches all user slugs from a CMS
  */
 export async function getAllTeamMemberSlugs(): Promise<string[]> {
-	const data = require("/public/data/teamMembers.json");
+	const data = require("../../../public/data/teamMembers.json");
 	const slugs = data.map((user: User) => user.slug);
 	return slugs;
 }

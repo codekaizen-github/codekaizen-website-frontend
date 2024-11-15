@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getAllProjectSlugs, getProject } from "@/app/api/project";
 
 interface ProjectDetailPageProps {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -12,16 +12,15 @@ export async function generateStaticParams() {
 	}));
 }
 
-export default async function ProjectDetailPage({
-	params,
-}: ProjectDetailPageProps) {
-	const project = await getProject(params.slug);
+export default async function ProjectDetailPage(props: ProjectDetailPageProps) {
+    const params = await props.params;
+    const project = await getProject(params.slug);
 
-	if (!project) {
+    if (!project) {
 		return notFound();
 	}
 
-	return (
+    return (
 		<div>
 			<div>
 				<h1 className="text-2xl">{project.name}</h1>

@@ -5,7 +5,7 @@ import { Project } from "@interfaces/project";
  * @description Fetches project data from a CMS
  */
 export async function getProjects(): Promise<Project[]> {
-	const data = require("/public/data/projects.json");
+	const data = require("../../../public/data/projects.json");
 	return data;
 }
 
@@ -15,7 +15,7 @@ export async function getProjects(): Promise<Project[]> {
  * @description Fetches project data from a CMS based on the slug
  */
 export async function getProject(slug: string): Promise<Project> {
-	const data = require("/public/data/projects.json");
+	const data = require("../../../public/data/projects.json");
 	const project = data.find((project: any) => project.slug === slug);
 	return project;
 }
@@ -25,7 +25,7 @@ export async function getProject(slug: string): Promise<Project> {
  * @description Fetches all project slugs from a CMS
  */
 export async function getAllProjectSlugs(): Promise<string[]> {
-	const data = require("/public/data/projects.json");
+	const data = require("../../../public/data/projects.json");
 	const slugs = data.map((project: Project) => project.slug);
 	return slugs;
 }

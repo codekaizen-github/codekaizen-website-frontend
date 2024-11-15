@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 interface TeamMemberPageProps {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -13,14 +13,15 @@ export async function generateStaticParams() {
 	}));
 }
 
-export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
-	const member = await getTeamMember(params.slug);
+export default async function TeamMemberPage(props: TeamMemberPageProps) {
+    const params = await props.params;
+    const member = await getTeamMember(params.slug);
 
-	if (!member) {
+    if (!member) {
 		return notFound();
 	}
 
-	return (
+    return (
 		<div>
 			<Image
 				src={member.photoUrl}
