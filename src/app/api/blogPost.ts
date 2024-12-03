@@ -1,6 +1,11 @@
 import { WordPressPost } from "@interfaces/wordPressPost";
 
-const baseWPApiUrl = "http://dev.codekaizen.net/wp-json/wp/v2/";
+// const baseWPApiUrl = "http://dev.codekaizen.net/wp-json/wp/v2/";
+const wordPressProtocol = process.env.WORDPRESS_PROTOCOL ?? "http://";
+const wordPressHostName =
+	process.env.WORDPRESS_HOST_NAME ?? "dev.codekaizen.net";
+const wordPressApiPath = process.env.WORDPRESS_API_PATH ?? "/wp-json/wp/v2/";
+const baseWPApiUrl = wordPressProtocol + wordPressHostName + wordPressApiPath;
 
 /**
  * @returns A promise that resolves to an array of WordPressPost objects
