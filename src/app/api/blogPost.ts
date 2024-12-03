@@ -1,6 +1,6 @@
 import { WordPressPost } from "@interfaces/wordPressPost";
 
-const baseWPApiUrl = "localhost:8000/wp-json/wp/v2/";
+const baseWPApiUrl = "http://dev.codekaizen.net/wp-json/wp/v2/";
 
 /**
  * @returns A promise that resolves to an array of WordPressPost objects
