@@ -3,7 +3,10 @@
 {
 	"name": "CodeKaizen Website Frontend",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	// "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"dockerComposeFile": ["../docker-compose-dev.yml"],
+	"service": "codekaizen-website",
+	"workspaceFolder": "/workspaces/codekaizen-website-frontend",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -24,7 +27,8 @@
 				"esbenp.prettier-vscode",
 				"gruntfuggly.todo-tree"			]
 		}
-	}
+	},
+	// "overrideCommand": true
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
