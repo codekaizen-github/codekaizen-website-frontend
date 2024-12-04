@@ -2,9 +2,11 @@ import { getExpandedBlogPosts } from "../api/blogPost";
 import DOMPurify from "dompurify";
 import ReactHtmlParser from "react-html-parser";
 import { JSDOM } from "jsdom";
+import { ExpandedWordPressPost } from "@interfaces/expandedPost";
 
 export default async function BlogRoll() {
-	const expandedBlogPosts = await getExpandedBlogPosts();
+	const expandedBlogPosts: ExpandedWordPressPost[] =
+		await getExpandedBlogPosts();
 	const window = new JSDOM("").window;
 	const DOMPurifyServer = DOMPurify(window);
 
