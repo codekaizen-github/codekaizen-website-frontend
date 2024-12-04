@@ -1,17 +1,27 @@
-import { getBlogPosts } from "../api/blogPost";
+import { getExpandedBlogPosts } from "../api/blogPost";
+import DOMPurify from "dompurify";
+import ReactHtmlParser from "react-html-parser";
+import { JSDOM } from "jsdom";
 
 export default async function BlogRoll() {
-	let blogPosts = await getBlogPosts();
+	const expandedBlogPosts = await getExpandedBlogPosts();
+	const window = new JSDOM("").window;
+	const DOMPurifyServer = DOMPurify(window);
 
 	return (
 		<>
 			<h1 className="text-3xl pb-6">Blog</h1>
 			<div className="gap-6 grid grid-cols-1 lg:grid-cols-2">
-				{blogPosts?.map((post) => (
+				{expandedBlogPosts?.map((post) => (
 					<div key={post.id}>
 						<div>
-							<h2>{post.id}</h2>
-							<p>{post.slug}</p>
+							<p>{post.title.rendered}</p>
+							{ReactHtmlParser(
+								DOMPurifyServer.sanitize(post.excerpt.rendered)
+							)}
+							<p>{post.author}</p>
+							<p>{post.date}</p>
+							<p>{post.expandedAuthor?.name}</p>
 						</div>
 					</div>
 				))}

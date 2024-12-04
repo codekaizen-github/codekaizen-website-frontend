@@ -1,11 +1,9 @@
-import { WordPressPost } from "@interfaces/wordPressPost";
+import { ExpandedWordPressPost } from "@interfaces/expandedPost";
+import { WordPressPost } from "@interfaces/wpPost";
+import { getWPUsers } from "./user";
+import { WordPressUser } from "@interfaces/wpUser";
 
-// const baseWPApiUrl = "http://dev.codekaizen.net/wp-json/wp/v2/";
-const wordPressProtocol = process.env.WORDPRESS_PROTOCOL ?? "http://";
-const wordPressHostName =
-	process.env.WORDPRESS_HOST_NAME ?? "dev.codekaizen.net";
-const wordPressApiPath = process.env.WORDPRESS_API_PATH ?? "/wp-json/wp/v2/";
-const baseWPApiUrl = wordPressProtocol + wordPressHostName + wordPressApiPath;
+const baseWPApiUrl = process.env.WORDPRESS_BASE_API_URL;
 
 /**
  * @returns A promise that resolves to an array of WordPressPost objects
@@ -21,6 +19,23 @@ export async function getBlogPosts(): Promise<WordPressPost[]> {
 		return posts;
 	} catch (error) {
 		console.error("Failed to fetch blog posts:", error);
+		throw error;
+	}
+}
+
+export async function getExpandedBlogPosts(): Promise<ExpandedWordPressPost[]> {
+	try {
+		const posts = await getBlogPosts();
+		const users = await getWPUsers();
+		const expandedBlogPosts: ExpandedWordPressPost[] = posts.map((post) => {
+			const user =
+				users.find((user) => user.id === post.author) ||
+				({} as WordPressUser);
+			return { ...post, expandedAuthor: user };
+		});
+		return expandedBlogPosts;
+	} catch (error) {
+		console.error("Failed to fetch expanded blog posts:", error);
 		throw error;
 	}
 }
