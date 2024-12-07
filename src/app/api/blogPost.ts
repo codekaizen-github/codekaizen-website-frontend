@@ -1,39 +1,54 @@
-import { ExpandedWordPressPost } from "@interfaces/expandedPost";
-import { WordPressPost } from "@interfaces/wpPost";
-import { getWPUsers } from "./user";
-import { WordPressUser } from "@interfaces/wpUser";
+import {
+	ExpandedPost,
+	ExpandedPostQueryObject,
+} from "@interfaces/expandedPost";
+import { request, gql } from "graphql-request";
 
-const baseWPApiUrl = process.env.WORDPRESS_BASE_API_URL;
+const wpGraphQLBase = process.env.WORDPRESS_GRAPHQL_BASE ?? "";
 
-/**
- * @returns A promise that resolves to an array of WordPressPost objects
- * @description Fetches blog posts from WorddPress
- */
-export async function getBlogPosts(): Promise<WordPressPost[]> {
-	try {
-		const response = await fetch(baseWPApiUrl + "posts");
-		if (!response.ok) {
-			throw new Error(`Error fetching posts: ${response.statusText}`);
+// /**
+//  * @returns A promise that resolves to an array of WordPressPost objects
+//  * @description Fetches blog posts from WorddPress
+//  */
+// export async function getBlogPosts(): Promise<WordPressPost[]> {
+// 	try {
+// 		const response = await fetch(baseWPApiUrl + "posts");
+// 		if (!response.ok) {
+// 			throw new Error(`Error fetching posts: ${response.statusText}`);
+// 		}
+// 		const posts: WordPressPost[] = await response.json();
+// 		return posts;
+// 	} catch (error) {
+// 		console.error("Failed to fetch blog posts:", error);
+// 		throw error;
+// 	}
+// }
+
+export async function getExpandedBlogPosts(): Promise<ExpandedPost[]> {
+	const expandedBlogPostsQuery = gql`
+		{
+			posts {
+				nodes {
+					title
+					dateGmt
+					excerpt
+					databaseId
+					slug
+					author {
+						node {
+							name
+						}
+					}
+				}
+			}
 		}
-		const posts: WordPressPost[] = await response.json();
-		return posts;
-	} catch (error) {
-		console.error("Failed to fetch blog posts:", error);
-		throw error;
-	}
-}
-
-export async function getExpandedBlogPosts(): Promise<ExpandedWordPressPost[]> {
+	`;
 	try {
-		const posts = await getBlogPosts();
-		const users = await getWPUsers();
-		const expandedBlogPosts: ExpandedWordPressPost[] = posts.map((post) => {
-			const user =
-				users.find((user) => user.id === post.author) ||
-				({} as WordPressUser);
-			return { ...post, expandedAuthor: user };
-		});
-		return expandedBlogPosts;
+		const expandedWPPosts: ExpandedPostQueryObject = await request(
+			wpGraphQLBase,
+			expandedBlogPostsQuery
+		);
+		return expandedWPPosts.posts.nodes as ExpandedPost[];
 	} catch (error) {
 		console.error("Failed to fetch expanded blog posts:", error);
 		throw error;

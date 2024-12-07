@@ -1,6 +1,16 @@
-import { WordPressPost } from "./wpPost";
-import { WordPressUser } from "./wpUser";
+import { SimplifiedUser } from "./simplifiedAuthor";
 
-export interface ExpandedWordPressPost extends WordPressPost {
-	expandedAuthor?: WordPressUser;
+export interface ExpandedPostQueryObject {
+	posts: {
+		nodes: ExpandedPost[];
+	};
+}
+
+export interface ExpandedPost {
+	title: string;
+	dateGmt: string;
+	excerpt: string;
+	databaseId: number;
+	slug: string;
+	author: SimplifiedUser;
 }
