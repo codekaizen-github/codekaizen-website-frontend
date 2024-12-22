@@ -1,24 +1,32 @@
 import {
-	ExpandedPost,
-	ExpandedPostQueryObject,
-} from "@interfaces/expandedPost";
+	CondensedPost,
+	CondensedPostQueryObject,
+} from "@interfaces/condensedPost";
 import { request, gql } from "graphql-request";
 
 const wpGraphQLBase = process.env.WORDPRESS_GRAPHQL_BASE ?? "";
 
-export async function getExpandedBlogPosts(): Promise<ExpandedPost[]> {
-	const expandedBlogPostsQuery = gql`
+export async function getCondensedBlogPosts(): Promise<CondensedPost[]> {
+	const condensedBlogPostsQuery = gql`
 		{
 			posts {
 				nodes {
+					databaseId
 					title
 					dateGmt
 					excerpt
-					databaseId
 					slug
 					author {
 						node {
+							databaseId
 							name
+						}
+					}
+					featuredImage {
+						node {
+							databaseId
+							mediaItemUrl
+							altText
 						}
 					}
 				}
@@ -26,13 +34,20 @@ export async function getExpandedBlogPosts(): Promise<ExpandedPost[]> {
 		}
 	`;
 	try {
-		const expandedWPPosts: ExpandedPostQueryObject = await request(
+		const condensedWPPosts: CondensedPostQueryObject = await request(
 			wpGraphQLBase,
-			expandedBlogPostsQuery
+			condensedBlogPostsQuery
 		);
-		return expandedWPPosts.posts.nodes as ExpandedPost[];
+		const formattedResults = condensedWPPosts.posts
+			.nodes as CondensedPost[];
+		formattedResults.sort((a, b) => {
+			const dateA = new Date(a.dateGmt).getTime();
+			const dateB = new Date(b.dateGmt).getTime();
+			return dateB - dateA;
+		});
+		return formattedResults;
 	} catch (error) {
-		console.error("Failed to fetch expanded blog posts:", error);
+		console.error("Failed to fetch condensed blog posts:", error);
 		throw error;
 	}
 }
