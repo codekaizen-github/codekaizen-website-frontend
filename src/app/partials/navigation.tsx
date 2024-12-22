@@ -41,8 +41,22 @@ export default function Navigation() {
 					href="/values"
 					className="text-retro-blue hover:text-retro-darkBlue no-underline"
 				>
-					Values.config
+					Values.env
 				</Link>
+				<Link
+					aria-label="Blog"
+					href="/blog"
+					className="text-retro-blue hover:text-retro-darkBlue no-underline"
+				>
+					{`{{ Blog }}`}
+				</Link>
+				{/* <Link
+					aria-label="Blog"
+					href="/blog"
+					className="text-retro-blue hover:text-retro-darkBlue no-underline"
+				>
+					{`Dev.log`}
+				</Link> */}
 			</div>
 			<div className="md:hidden">
 				<button
@@ -86,7 +100,14 @@ export default function Navigation() {
 						href="/values"
 						className="text-2xl text-retro-blue hover:text-retro-darkBlue no-underline"
 					>
-						Values.config
+						Values.env
+					</Link>
+					<Link
+						aria-label="Blog"
+						href="/blog"
+						className="text-2xl text-retro-blue hover:text-retro-darkBlue no-underline"
+					>
+						{`{{ Blog }}`}
 					</Link>
 				</div>
 			)}
