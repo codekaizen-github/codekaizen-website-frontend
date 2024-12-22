@@ -38,14 +38,15 @@ export default function BlogReelPostCard({ post }: BlogReelPostCardProps) {
 									{post.title}
 								</Link>
 							</h2>
-							<p className="text-lg">{post.author.node.name}</p>
 							<p className="text-neutral-400">
 								{formatDateAsFriendly(post.dateGmt)} by{" "}
 								{post.author.node.name}
 							</p>
-							{ReactHtmlParser(
-								DOMPurifyServer.sanitize(post.excerpt)
-							)}
+							<div className="mt-2">
+								{ReactHtmlParser(
+									DOMPurifyServer.sanitize(post.excerpt)
+								)}
+							</div>
 						</div>
 					</div>
 				</div>
