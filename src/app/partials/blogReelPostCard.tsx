@@ -33,11 +33,11 @@ export default function BlogReelPostCard({ post }: BlogReelPostCardProps) {
 					)}
 					<div className="flex gap-4 mr-4">
 						<div className="post-content">
-							<h2 className="text-2xl font-semibold">
+							<p className="text-2xl font-semibold">
 								<Link href={`/blog/${post.slug}`}>
 									{post.title}
 								</Link>
-							</h2>
+							</p>
 							<p className="text-neutral-400">
 								{formatDateAsFriendly(post.dateGmt)} by{" "}
 								{post.author.node.name}
