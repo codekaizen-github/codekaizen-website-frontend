@@ -1,5 +1,5 @@
 import { getCondensedBlogPosts } from "../api/blogPost";
-import { CondensedPost } from "@interfaces/condensedPost";
+import { CondensedPost } from "@interfaces/blogPost";
 import BlogReelPostCard from "../partials/blogReelPostCard";
 
 export default async function BlogRoll() {

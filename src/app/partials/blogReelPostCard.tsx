@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { CondensedPost } from "@interfaces/condensedPost";
+import { CondensedPost } from "@interfaces/blogPost";
 import DOMPurify from "dompurify";
 import ReactHtmlParser from "react-html-parser";
 import { JSDOM } from "jsdom";
