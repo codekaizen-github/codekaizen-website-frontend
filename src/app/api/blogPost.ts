@@ -9,6 +9,13 @@ import {
 import { request, gql } from "graphql-request";
 
 const wpGraphQLBase = process.env.WORDPRESS_GRAPHQL_BASE ?? "";
+const cfAccessClientId = process.env.CF_ACCESS_CLIENT_ID ?? "";
+const cfAccessClientSecret = process.env.CF_ACCESS_CLIENT_SECRET ?? "";
+
+const headers = {
+	"CF-Access-Client-Id": cfAccessClientId,
+	"CF-Access-Client-Secret": cfAccessClientSecret,
+};
 
 export async function getAllBlogPostSlugs(): Promise<string[]> {
 	const blogPostSlugs = gql`
@@ -24,7 +31,9 @@ export async function getAllBlogPostSlugs(): Promise<string[]> {
 	try {
 		const response: PostSlugsQueryObject = await request(
 			wpGraphQLBase,
-			blogPostSlugs
+			blogPostSlugs,
+			{},
+			headers
 		);
 		const postSlugs = response.posts.nodes as PostSlug[];
 		const slugs = postSlugs.map((post) => post.slug);
@@ -65,7 +74,9 @@ export async function getCondensedBlogPosts(): Promise<CondensedPost[]> {
 	try {
 		const response: CondensedPostsQueryObject = await request(
 			wpGraphQLBase,
-			condensedBlogPostsQuery
+			condensedBlogPostsQuery,
+			{},
+			headers
 		);
 		const condensedPosts = response.posts.nodes as CondensedPost[];
 		condensedPosts.sort((a, b) => {
@@ -110,7 +121,8 @@ export async function getExpandedBlogPost(slug: string): Promise<ExpandedPost> {
 		const response: ExpandedPostQueryObject = await request(
 			wpGraphQLBase,
 			expandedBlogPostQuery,
-			variables
+			variables,
+			headers
 		);
 		const expandedPost: ExpandedPost = response.post;
 		return expandedPost;
