@@ -2,6 +2,8 @@ import { getCondensedBlogPosts } from "../api/blogPost";
 import { CondensedPost } from "@interfaces/blogPost";
 import BlogReelPostCard from "../partials/blogReelPostCard";
 
+export const revalidate = 3600; // Revalidate every 1 hour
+
 export default async function BlogRoll() {
 	const condensedBlogPosts: CondensedPost[] = await getCondensedBlogPosts();
 
