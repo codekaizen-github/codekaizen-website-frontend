@@ -25,9 +25,11 @@ export default function TeamMemberCard({ project }: ProjectCardProps) {
 					)}
 					<div className="flex gap-4 mr-4">
 						<div className="project-content">
-							<h2 className="text-xl font-semibold">
-								{project.name}
-							</h2>
+							<p className="text-2xl font-semibold">
+								<Link href={`/projects/${project.slug}`}>
+									{project.name}
+								</Link>
+							</p>
 							<p className="">{project.summary}</p>
 						</div>
 					</div>

@@ -1,0 +1,14 @@
+services:
+    codekaizen-website:
+        image: mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm
+        volumes:
+            - ./:/workspaces/codekaizen-website-frontend
+        networks:
+            codekaizen-network:
+                aliases:
+                    - codekaizen-website
+        command: sleep infinity
+
+networks:
+    codekaizen-network:
+        external: true

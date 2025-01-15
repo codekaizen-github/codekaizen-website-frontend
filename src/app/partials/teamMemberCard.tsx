@@ -22,14 +22,14 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
 							className="mb-4 h-40 w-40 md:mb-0 sm:mr-4"
 						/>
 					)}
-					<div className="flex gap-4 mr-4">
-						<div className="member-content">
-							<h2 className="text-xl font-semibold">
+					<div className="member-content">
+						<p className="text-2xl font-semibold">
+							<Link href={`/team/${member.slug}`}>
 								{member.name}
-							</h2>
-							<p className="text-lg">{member.role}</p>
-							<p className="">{member.description}</p>
-						</div>
+							</Link>
+						</p>
+						<p className="text-neutral-400">{member.role}</p>
+						<p className="mt-2">{member.description}</p>
 					</div>
 				</div>
 				<Link
