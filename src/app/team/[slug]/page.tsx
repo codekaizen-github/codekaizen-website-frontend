@@ -1,4 +1,4 @@
-import { getAllTeamMemberSlugs, getTeamMember } from "@/api/user";
+import { getAllTeamMemberSlugs, getTeamMember } from "@clients/wordpress/user";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 

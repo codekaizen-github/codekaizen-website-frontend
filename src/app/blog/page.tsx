@@ -1,6 +1,6 @@
-import { getCondensedBlogPosts } from "@/api/condensedPost";
+import { getCondensedBlogPosts } from "@/clients/wordpress/condensedPost";
 import { CondensedPost } from "@interfaces/condensedPost";
-import BlogReelPostCard from "../partials/blogReelPostCard";
+import BlogReelPostCard from "@partials/blogReelPostCard";
 
 export const revalidate = 3600; // Revalidate every 1 hour
 

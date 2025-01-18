@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getAllProjectSlugs, getProject } from "@/api/project";
+import { getAllProjectSlugs, getProject } from "@clients/wordpress/project";
 
 interface ProjectDetailPageProps {
 	params: Promise<{ slug: string }>;

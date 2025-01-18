@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/partials/navigation";
+import Navigation from "@partials/navigation";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import Footer from "@/partials/footer";
+import Footer from "@partials/footer";
 import { Analytics } from "@vercel/analytics/react";
 
 config.autoAddCss = false;

@@ -4,7 +4,7 @@ import {
 } from "@interfaces/condensedPost";
 import { request, gql } from "graphql-request";
 import { CondensedPostsQueryObjectFromRaw } from "@validators/blogPost";
-import { wpGraphQLBase, headers } from "@/api/constants";
+import { wpGraphQLBase, headers } from "./constants";
 
 export async function getCondensedBlogPosts(): Promise<CondensedPost[]> {
 	const condensedBlogPostsQuery = gql`

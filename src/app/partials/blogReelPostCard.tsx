@@ -6,7 +6,7 @@ import { CondensedPost } from "@interfaces/condensedPost";
 import DOMPurify from "dompurify";
 import ReactHtmlParser from "react-html-parser";
 import { JSDOM } from "jsdom";
-import { formatDateAsFriendly } from "@/utils/formatDate";
+import { formatDateAsFriendly } from "@utils/formatDate";
 
 interface BlogReelPostCardProps {
 	post: CondensedPost;

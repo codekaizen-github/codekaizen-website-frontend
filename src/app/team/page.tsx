@@ -1,5 +1,5 @@
-import TeamMemberCard from "@/partials/teamMemberCard";
-import { getTeamMembers } from "@/api/user";
+import TeamMemberCard from "@partials/teamMemberCard";
+import { getTeamMembers } from "@clients/wordpress/user";
 
 export default async function TeamPage() {
 	let data = await getTeamMembers();

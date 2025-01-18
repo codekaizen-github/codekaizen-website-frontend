@@ -1,6 +1,6 @@
 import { PostSlug, PostSlugsQueryObject } from "@interfaces/postSlug";
 import { request, gql } from "graphql-request";
-import { wpGraphQLBase, headers } from "@/api/constants";
+import { wpGraphQLBase, headers } from "./constants";
 
 export async function getAllBlogPostSlugs(): Promise<string[]> {
 	const blogPostSlugs = gql`

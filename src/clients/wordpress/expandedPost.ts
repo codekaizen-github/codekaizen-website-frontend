@@ -3,7 +3,7 @@ import {
 	ExpandedPostQueryObject,
 } from "@interfaces/expandedPost";
 import { request, gql } from "graphql-request";
-import { wpGraphQLBase, headers } from "@/api/constants";
+import { wpGraphQLBase, headers } from "./constants";
 
 export async function getExpandedBlogPost(slug: string): Promise<ExpandedPost> {
 	const expandedBlogPostQuery = gql`

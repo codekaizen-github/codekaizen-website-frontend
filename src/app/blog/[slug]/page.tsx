@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import { getAllBlogPostSlugs } from "@/api/postSlug";
-import { getExpandedBlogPost } from "@/api/expandedPost";
-import { formatDateAsFriendly } from "@/utils/formatDate";
 import Image from "next/image";
+import { getAllBlogPostSlugs } from "@/clients/wordpress/postSlug";
+import { getExpandedBlogPost } from "@/clients/wordpress/expandedPost";
+import { formatDateAsFriendly } from "@/app/utils/formatDate";
 
 interface BlogDetailPageProps {
 	params: Promise<{ slug: string }>;
