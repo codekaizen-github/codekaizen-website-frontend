@@ -7,6 +7,7 @@ import {
 	PostSlugsQueryObject,
 } from "@interfaces/blogPost";
 import { request, gql } from "graphql-request";
+import { CondensedPostsQueryObjectFromRaw } from "../../../validators/blogPost";
 
 const wpGraphQLBase = process.env.WORDPRESS_GRAPHQL_BASE ?? "";
 const cfAccessClientId = process.env.CF_ACCESS_CLIENT_ID ?? "";
@@ -78,7 +79,8 @@ export async function getCondensedBlogPosts(): Promise<CondensedPost[]> {
 			{},
 			headers
 		);
-		const condensedPosts = response.posts.nodes as CondensedPost[];
+		const validatedResponse = CondensedPostsQueryObjectFromRaw(response);
+		const condensedPosts = validatedResponse.posts.nodes;
 		condensedPosts.sort((a, b) => {
 			const dateA = new Date(a.dateGmt).getTime();
 			const dateB = new Date(b.dateGmt).getTime();

@@ -15,7 +15,7 @@ export interface CondensedPost {
 	excerpt: string;
 	slug: string;
 	author: SimplifiedAuthorNode;
-	featuredImage: SimplifiedFeaturedImageNode;
+	featuredImage?: SimplifiedFeaturedImageNode | null;
 }
 /* End CondensedPost */
 
