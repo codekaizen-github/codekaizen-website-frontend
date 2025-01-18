@@ -3,7 +3,7 @@ import {
 	CondensedPostsQueryObject,
 } from "@interfaces/condensedPost";
 import { request, gql } from "graphql-request";
-import { CondensedPostsQueryObjectFromRaw } from "@validators/blogPost";
+import { CondensedPostsQueryObjectFromRaw } from "@validators/condensedPost";
 import { wpGraphQLBase, headers } from "./constants";
 
 export async function getCondensedBlogPosts(): Promise<CondensedPost[]> {
