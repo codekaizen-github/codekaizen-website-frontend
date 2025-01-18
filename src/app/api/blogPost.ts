@@ -7,7 +7,7 @@ import {
 	PostSlugsQueryObject,
 } from "@interfaces/blogPost";
 import { request, gql } from "graphql-request";
-import { CondensedPostsQueryObjectFromRaw } from "../../../validators/blogPost";
+import { CondensedPostsQueryObjectFromRaw } from "@validators/blogPost";
 
 const wpGraphQLBase = process.env.WORDPRESS_GRAPHQL_BASE ?? "";
 const cfAccessClientId = process.env.CF_ACCESS_CLIENT_ID ?? "";
