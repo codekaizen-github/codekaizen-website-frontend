@@ -1,10 +1,7 @@
-import {
-	CondensedPost,
-	CondensedPostsQueryObject,
-} from "@interfaces/condensedPost";
+import { CondensedPost } from "@interfaces/condensedPost";
 import { request, gql } from "graphql-request";
-import { CondensedPostsQueryObjectFromRaw } from "@validators/condensedPost";
 import { wpGraphQLBase, headers } from "./constants";
+import { CondensedPostsQueryObjectFromRaw } from "@validators/condensedPost";
 
 export async function getCondensedBlogPosts(): Promise<CondensedPost[]> {
 	const condensedBlogPostsQuery = gql`
@@ -34,7 +31,7 @@ export async function getCondensedBlogPosts(): Promise<CondensedPost[]> {
 		}
 	`;
 	try {
-		const response: CondensedPostsQueryObject = await request(
+		const response = await request(
 			wpGraphQLBase,
 			condensedBlogPostsQuery,
 			{},

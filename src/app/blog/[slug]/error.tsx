@@ -21,7 +21,7 @@ export default function Error({
 					Oops! Something went wrong...
 				</h1>
 				<p className="mb-2 text-lg">
-					This blog post appears to be in a trance.
+					This post appears to be in a trance.
 				</p>
 				<p className="mb-2 text-3xl">🧘‍♂️</p>
 				<p className="mt-4">
@@ -30,7 +30,7 @@ export default function Error({
 					</button>{" "}
 					or you can{" "}
 					<Link aria-label="go home" href="/">
-						find a different post
+						read another post
 					</Link>{" "}
 					while we find our zen.
 				</p>

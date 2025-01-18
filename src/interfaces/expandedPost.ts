@@ -11,6 +11,6 @@ export interface ExpandedPost {
 	dateGmt: string;
 	slug: string;
 	author: SimplifiedAuthorNode;
-	featuredImage: SimplifiedFeaturedImageNode;
+	featuredImage?: SimplifiedFeaturedImageNode | null;
 	content: string;
 }

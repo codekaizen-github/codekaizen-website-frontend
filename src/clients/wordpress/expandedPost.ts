@@ -1,9 +1,7 @@
-import {
-	ExpandedPost,
-	ExpandedPostQueryObject,
-} from "@interfaces/expandedPost";
+import { ExpandedPost } from "@interfaces/expandedPost";
 import { request, gql } from "graphql-request";
 import { wpGraphQLBase, headers } from "./constants";
+import { ExpandedPostQueryObjectFromRaw } from "@validators/expandedPost";
 
 export async function getExpandedBlogPost(slug: string): Promise<ExpandedPost> {
 	const expandedBlogPostQuery = gql`
@@ -32,13 +30,14 @@ export async function getExpandedBlogPost(slug: string): Promise<ExpandedPost> {
     `;
 	try {
 		const variables = { slug };
-		const response: ExpandedPostQueryObject = await request(
+		const response = await request(
 			wpGraphQLBase,
 			expandedBlogPostQuery,
 			variables,
 			headers
 		);
-		const expandedPost: ExpandedPost = response.post;
+		const validatedResponse = ExpandedPostQueryObjectFromRaw(response);
+		const expandedPost = validatedResponse.post;
 		return expandedPost;
 	} catch (error) {
 		console.error("Failed to fetch expanded blog post:", error);
