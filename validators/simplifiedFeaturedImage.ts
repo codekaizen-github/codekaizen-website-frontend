@@ -1,5 +1,8 @@
 import { z } from "zod";
-import { SimplifiedFeaturedImageNode } from "../interfaces/simplifiedFeaturedImage";
+import {
+	SimplifiedFeaturedImage,
+	SimplifiedFeaturedImageNode,
+} from "@interfaces/simplifiedFeaturedImage";
 
 export const SimplifiedFeaturedImageValidator = z.object({
 	databaseId: z.number(),
@@ -10,6 +13,13 @@ export const SimplifiedFeaturedImageValidator = z.object({
 export const SimplifiedFeaturedImageNodeValidator = z.object({
 	node: SimplifiedFeaturedImageValidator,
 });
+
+export function SimplifiedFeaturedImageFromRaw(
+	raw: any
+): SimplifiedFeaturedImage {
+	const parsed = SimplifiedFeaturedImageValidator.parse(raw);
+	return parsed;
+}
 
 export function SimplifiedFeaturedImageNodeFromRaw(
 	raw: any

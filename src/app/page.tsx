@@ -1,4 +1,4 @@
-import { Tagline } from "./partials/tagline";
+import { Tagline } from "@/partials/tagline";
 
 export default function HomePage() {
 	return (

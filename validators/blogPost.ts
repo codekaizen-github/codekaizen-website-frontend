@@ -2,7 +2,7 @@ import { z } from "zod";
 import {
 	CondensedPostsQueryObject,
 	CondensedPost,
-} from "../interfaces/blogPost";
+} from "@interfaces/condensedPost";
 import { SimplifiedAuthorNodeValidator } from "./simplifiedAuthor";
 import { SimplifiedFeaturedImageNodeValidator } from "./simplifiedFeaturedImage";
 

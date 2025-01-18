@@ -1,5 +1,5 @@
-import { getCondensedBlogPosts } from "../api/blogPost";
-import { CondensedPost } from "@interfaces/blogPost";
+import { getCondensedBlogPosts } from "@/api/condensedPost";
+import { CondensedPost } from "@interfaces/condensedPost";
 import BlogReelPostCard from "../partials/blogReelPostCard";
 
 export const revalidate = 3600; // Revalidate every 1 hour

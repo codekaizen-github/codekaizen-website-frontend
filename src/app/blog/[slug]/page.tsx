@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
-import { getAllBlogPostSlugs, getExpandedBlogPost } from "@/app/api/blogPost";
-import { formatDateAsFriendly } from "@/app/utility/formatDate";
+import { getAllBlogPostSlugs } from "@/api/postSlug";
+import { getExpandedBlogPost } from "@/api/expandedPost";
+import { formatDateAsFriendly } from "@/utils/formatDate";
 import Image from "next/image";
 
 interface BlogDetailPageProps {

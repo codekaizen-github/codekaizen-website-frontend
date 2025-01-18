@@ -1,5 +1,5 @@
-import { getProjects } from "../api/project";
-import ProjectCard from "../partials/projectCard";
+import { getProjects } from "@/api/project";
+import ProjectCard from "@/partials/projectCard";
 
 export default async function ProjectsPage() {
 	let data = await getProjects();

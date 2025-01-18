@@ -1,4 +1,4 @@
-import { getAllTeamMemberSlugs, getTeamMember } from "@/app/api/user";
+import { getAllTeamMemberSlugs, getTeamMember } from "@/api/user";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -14,14 +14,14 @@ export async function generateStaticParams() {
 }
 
 export default async function TeamMemberPage(props: TeamMemberPageProps) {
-    const params = await props.params;
-    const member = await getTeamMember(params.slug);
+	const params = await props.params;
+	const member = await getTeamMember(params.slug);
 
-    if (!member) {
+	if (!member) {
 		return notFound();
 	}
 
-    return (
+	return (
 		<div>
 			<Image
 				src={member.photoUrl}
