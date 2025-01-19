@@ -2,7 +2,7 @@ import { SimplifiedAuthorNode } from "./simplifiedAuthor";
 import { SimplifiedFeaturedImageNode } from "./simplifiedFeaturedImage";
 
 export interface ExpandedPostQueryObject {
-	post: ExpandedPost;
+	post: ExpandedPost | null;
 }
 
 export interface ExpandedPost {

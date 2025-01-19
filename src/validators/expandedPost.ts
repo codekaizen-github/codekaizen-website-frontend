@@ -17,7 +17,7 @@ export const ExpandedPostValidator = z.object({
 });
 
 export const ExpandedPostQueryObjectValidator = z.object({
-	post: ExpandedPostValidator,
+	post: ExpandedPostValidator.nullable(),
 });
 
 export function ExpandedPostFromRaw(raw: any): ExpandedPost {
