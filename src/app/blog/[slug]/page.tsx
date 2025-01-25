@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
-import { getAllBlogPostSlugs, getExpandedBlogPost } from "@/app/api/blogPost";
-import { formatDateAsFriendly } from "@/app/utility/formatDate";
 import Image from "next/image";
+import { getAllBlogPostSlugs } from "@/clients/wordpress/postSlug";
+import { getExpandedBlogPost } from "@/clients/wordpress/expandedPost";
+import { formatDateAsFriendly } from "@/app/utils/formatDate";
+import { ExpandedPost } from "@/interfaces/expandedPost";
+import ServerError from "@partials/serverError";
 
 interface BlogDetailPageProps {
 	params: Promise<{ slug: string }>;
@@ -16,10 +19,16 @@ export async function generateStaticParams() {
 
 export default async function BlogDetailPage(props: BlogDetailPageProps) {
 	const params = await props.params;
-	const post = await getExpandedBlogPost(params.slug);
+	let post: ExpandedPost | null = null;
 
-	if (!post) {
-		return notFound();
+	try {
+		post = await getExpandedBlogPost(params.slug);
+	} catch (error) {
+		return <ServerError />;
+	}
+
+	if (post === null) {
+		notFound();
 	}
 
 	return (
@@ -46,7 +55,6 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
 					className="mt-4 space-between-p"
 				/>
 			</div>
-			<div></div>
 		</div>
 	);
 }

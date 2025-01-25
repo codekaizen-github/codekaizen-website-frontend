@@ -4,7 +4,7 @@ import { faDumbbell } from "@fortawesome/free-solid-svg-icons/faDumbbell";
 import { faTree } from "@fortawesome/free-solid-svg-icons/faTree";
 import { faFootball } from "@fortawesome/free-solid-svg-icons/faFootball";
 import { faCog } from "@fortawesome/free-solid-svg-icons/faCog";
-import ValueCard from "../partials/valueCard";
+import ValueCard from "@partials/valueCard";
 
 export default function ValuesPage() {
 	return (

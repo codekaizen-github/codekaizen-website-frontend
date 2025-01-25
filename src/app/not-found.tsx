@@ -13,11 +13,7 @@ export default function NotFound() {
 				</p>
 				<p className="mb-2 text-lg">
 					Breathe deep, center yourself, and{" "}
-					<Link
-						aria-label="go home"
-						href="/"
-						className="text-retro-blue"
-					>
+					<Link aria-label="go home" href="/">
 						return to the way of the code
 					</Link>
 					.

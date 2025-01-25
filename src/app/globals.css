@@ -17,12 +17,14 @@
 	--retro-darkYellow: #c7c400;
 }
 
-a {
+a,
+.display-as-link {
 	color: var(--retro-blue);
 	text-decoration: underline dotted;
 }
 
-a:hover {
+a:hover,
+.display-as-link:hover {
 	color: var(--retro-darkBlue);
 }
 
