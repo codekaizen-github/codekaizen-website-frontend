@@ -38,11 +38,21 @@ ul {
 	margin-left: 1.5rem;
 }
 
+code {
+	color: rgb(163, 163, 163);
+}
+
+h2.wp-block-heading {
+	font-size: 1.5rem;
+	margin-top: 1em;
+}
+
 .code {
 	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
 	font-feature-settings: normal;
 	font-variation-settings: normal;
+	font-size: 1em;
 }
 
 .comment {
@@ -84,6 +94,20 @@ ul {
 
 .space-between-p p:not(:first-child) {
 	margin-top: 1em;
+}
+
+.wp-block-code {
+	background-color: rgb(38, 38, 38);
+	color: rgb(163, 163, 163);
+	padding: 1rem;
+	margin-top: 1em;
+	font-size: 90%;
+	overflow: auto;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+		Liberation Mono, Courier New, monospace;
+	font-feature-settings: normal;
+	font-variation-settings: normal;
+	font-size: 1em;
 }
 
 @keyframes blink-caret {

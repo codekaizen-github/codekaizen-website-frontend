@@ -45,7 +45,7 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
 						/>
 					</>
 				)}
-				<h1 className="text-2xl">{post.title}</h1>
+				<h1 className="text-3xl">{post.title}</h1>
 				<p className="text-neutral-400">
 					{formatDateAsFriendly(post.dateGmt)} by{" "}
 					{post.author.node.name}
