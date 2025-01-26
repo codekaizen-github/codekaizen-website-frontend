@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 
 const VALID_TOKEN = process.env.REVALIDATE_SECRET;
 
-export async function GET(req: Request) {
+export async function POST(req: Request) {
 	const token = req.headers.get("Authorization");
 	if (token !== `Bearer ${VALID_TOKEN}`) {
 		return new Response("Unauthorized", {
