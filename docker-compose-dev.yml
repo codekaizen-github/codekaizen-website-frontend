@@ -8,6 +8,7 @@ services:
                 aliases:
                     - codekaizen-website
         command: sleep infinity
+        env_file: .env
 
 networks:
     codekaizen-network:
