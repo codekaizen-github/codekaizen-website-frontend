@@ -24,7 +24,15 @@ pipeline {
                 }
             }
         }
-        stage('Push to npm') {
+        stage('Define vars') {
+            agent any
+            steps {
+                script {
+                    env.DYNAMIC_REF_NAME = env.TAG_NAME ?: env.GIT_BRANCH
+                }
+            }
+        }
+        stage('Push to GitHub') {
             when {
                 branch 'main';
             }
@@ -40,9 +48,10 @@ pipeline {
                         conjurSecretCredential(credentialsId: 'codekaizen-website-github-token-missiedawes-codekaizen-website-frontend-push', variable: 'GITHUB_TOKEN_PUSH')
                     ]) {
                         sh '''
+                        env
                         git config --global --add safe.directory $(realpath $(pwd))
                         git remote set-url origin https://USERNAME:${GITHUB_TOKEN_PUSH}@github.com/missiedawes/codekaizen-website-frontend.git
-                        git push origin main --force
+                        git push origin HEAD:${DYNAMIC_REF_NAME} --force
                         '''
                     }
                 }
