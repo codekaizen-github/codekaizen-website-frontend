@@ -40,6 +40,7 @@ pipeline {
                         conjurSecretCredential(credentialsId: 'codekaizen-website-github-token-missiedawes-codekaizen-website-frontend-push', variable: 'GITHUB_TOKEN_PUSH')
                     ]) {
                         sh '''
+                        git config --global --add safe.directory $(realpath $(pwd))
                         git remote set-url origin https://USERNAME:${GITHUB_TOKEN_PUSH}@github.com/missiedawes/codekaizen-website-frontend.git
                         git push origin main --force
                         '''
