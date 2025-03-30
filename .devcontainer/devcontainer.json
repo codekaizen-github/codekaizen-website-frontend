@@ -7,7 +7,7 @@
 	"dockerComposeFile": ["../docker-compose-dev.yml"],
 	"service": "codekaizen-website",
 	"workspaceFolder": "/workspaces/codekaizen-website-frontend",
-
+	"initializeCommand": "docker network create codekaizen-network || true",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
