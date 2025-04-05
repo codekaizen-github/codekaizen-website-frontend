@@ -81,12 +81,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		process.env.NODE_ENV === "production"
 			? path.resolve(process.cwd(), ".next", "server", "app")
 			: path.resolve(process.cwd(), "src", "app");
-	console.log({
-		cwd: process.cwd(),
-		ls: fs.readdirSync(process.cwd(), { withFileTypes: true }),
-		filePathRoot,
-		lsFilePathRoot: fs.readdirSync(filePathRoot, { withFileTypes: true }),
-	});
 	const allRoutes = (
 		await Promise.all([
 			getStaticRoutes(
