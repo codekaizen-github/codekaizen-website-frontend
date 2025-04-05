@@ -14,6 +14,7 @@ export async function POST(req: Request) {
 	try {
 		await getAllBlogPostSlugs();
 		revalidatePath("/blog");
+		revalidatePath("/sitemap.xml");
 		return new Response("revalidated /blog", {
 			status: 200,
 			headers: { "Content-Type": "application/json" },
