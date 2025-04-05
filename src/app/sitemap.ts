@@ -78,10 +78,15 @@ async function getDynamicRoutes(
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+	console.log({
+		cwd: process.cwd(),
+		ls: fs.readdirSync(process.cwd(), { withFileTypes: true }),
+	});
 	const allRoutes = (
 		await Promise.all([
 			getStaticRoutes(
-				path.dirname(path.dirname(fileURLToPath(import.meta.url)))
+				// path.dirname(path.dirname(fileURLToPath(import.meta.url)))
+				path.resolve(process.cwd(), "src", "app")
 			),
 			getDynamicRoutes("blog", "slug"),
 			getDynamicRoutes("projects", "slug"),
