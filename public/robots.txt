@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://codekaizen.net
+
+# Sitemaps
+Sitemap: https://codekaizen.net/sitemap.xml
