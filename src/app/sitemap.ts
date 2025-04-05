@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 
 import type { MetadataRoute } from "next";
-import { fileURLToPath } from "url";
 
 const APP_URL = process.env.APP_URL;
 
@@ -16,7 +15,7 @@ const siteConfig = {
 
 // Recursively collect all pages with `page.tsx`
 async function getStaticRoutes(
-	filePathRoot = "app",
+	filePathRoot: string,
 	urlRoot = ""
 ): Promise<string[]> {
 	const currentDir = filePathRoot;
