@@ -47,6 +47,11 @@ h2.wp-block-heading {
 	margin-top: 1em;
 }
 
+h3.wp-block-heading {
+	font-size: 1.25rem;
+	margin-top: 1em;
+}
+
 .code {
 	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
@@ -113,6 +118,11 @@ h2.wp-block-heading {
 .wp-block-image {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+}
+
+.wp-block-image.aligncenter img {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @keyframes blink-caret {
