@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CodeKaizen Website Frontend
 
-## Getting Started
+## Environment Configuration: Switching WordPress Backends
 
-First, run the development server:
+This project uses a `.env` file to configure which WordPress backend the frontend communicates with. You can easily switch between the production backend and your local development backend by setting the appropriate environment variable.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 1. Create or Edit Your `.env` File
+
+In the root of the project, create a file named `.env` if it does not already exist.
+
+### 2. Set the WordPress Environment Variables
+
+Add the following lines to your `.env` file:
+
+```
+WORDPRESS_HOST_NAME=<your-wordpress-host-name>
+WORDPRESS_GRAPHQL_BASE=<your-graphql-base>
+APP_URL=<your-frontend-app-url>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   **For local development**, use:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    ```
+    WORDPRESS_HOST_NAME=dev.codekaizen.net
+    WORDPRESS_GRAPHQL_BASE=http://dev.codekaizen.net/graphql
+    APP_URL=https://codekaizen.net
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    Note that the `APP_URL` can be set to your production URL, as it is used for generating sitemap links and other absolute URLs that generally don't matter in development.
 
-## Learn More
+-   **For production**, use:
+    ```
+    WORDPRESS_HOST_NAME=wp.codekaizen.net
+    WORDPRESS_GRAPHQL_BASE=https://wp.codekaizen.net/graphql
+    APP_URL=https://codekaizen.net
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Switching Environments
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   To switch between backends, simply change the value of `WORDPRESS_HOST_NAME` and `WORDPRESS_GRAPHQL_BASE` in your `.env` file and restart the dev container.
