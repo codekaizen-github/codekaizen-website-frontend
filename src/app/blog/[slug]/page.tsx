@@ -5,6 +5,7 @@ import { getExpandedBlogPost } from "@/clients/wordpress/expandedPost";
 import { formatDateAsFriendly } from "@/app/utils/formatDate";
 import { ExpandedPost } from "@/interfaces/expandedPost";
 import ServerError from "@partials/serverError";
+import "highlight.js/styles/github.css"; // Importing a syntax highlighting theme
 
 interface BlogDetailPageProps {
 	params: Promise<{ slug: string }>;
