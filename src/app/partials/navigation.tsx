@@ -50,13 +50,6 @@ export default function Navigation() {
 				>
 					{`{{ Blog }}`}
 				</Link>
-				{/* <Link
-					aria-label="Blog"
-					href="/blog"
-					className="text-retro-blue hover:text-retro-darkBlue no-underline"
-				>
-					{`Dev.log`}
-				</Link> */}
 			</div>
 			<div className="md:hidden">
 				<button

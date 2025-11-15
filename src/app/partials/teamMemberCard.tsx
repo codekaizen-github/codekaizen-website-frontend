@@ -10,16 +10,17 @@ interface TeamMemberCardProps {
 
 export default function TeamMemberCard({ member }: TeamMemberCardProps) {
 	return (
-		<div key={member.id} className="bg-neutral-800">
+		<div key={member.slug} className="bg-neutral-800">
 			<div className="flex items-center h-full">
 				<div className="flex flex-wrap items-center py-4 pl-4 md:flex-nowrap">
-					{member.photoUrl && (
+					{member.avatar.url && (
 						<Image
-							src={member.photoUrl}
+							src={member.avatar.url}
 							alt={member.name}
 							width={150}
 							height={150}
 							className="mb-4 h-40 w-40 md:mb-0 sm:mr-4"
+							priority={true}
 						/>
 					)}
 					<div className="member-content">
@@ -28,8 +29,8 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
 								{member.name}
 							</Link>
 						</p>
-						<p className="text-neutral-400">{member.role}</p>
-						<p className="mt-2">{member.description}</p>
+						<p className="text-neutral-400">{member.moniker}</p>
+						<p className="mt-2">{member.previewDescription}</p>
 					</div>
 				</div>
 				<Link

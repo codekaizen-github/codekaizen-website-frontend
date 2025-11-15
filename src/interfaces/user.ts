@@ -1,10 +1,14 @@
 export interface User {
-	id: number;
-	name: string;
-	photoUrl: string;
-	role: string;
-	slug: string;
-	githubUsername: string;
-	description: string;
-	bio: string;
+	databaseId: number;
+  name: string;
+  slug: string;
+  avatar: {
+    url: string;
+  };
+	moniker: string;
+  teamMember: {
+    content: string;
+  };
+  githubUserId: string;
+  previewDescription: string;
 }

@@ -23,24 +23,23 @@ export default async function TeamMemberPage(props: TeamMemberPageProps) {
 
 	return (
 		<div>
-			<Image
-				src={member.photoUrl}
+			<Image className="mb-6 h-70 w-70 mx-auto"
+				src={member.avatar.url}
 				alt={member.name}
 				width={350}
 				height={350}
-				className="mb-6 h-70 w-70 mx-auto"
 			/>
 			<div>
 				<h1 className="text-2xl">{member.name}</h1>
 				<a
 					aria-label="View team member's GitHub profile"
-					href={`https://github.com/${member.githubUsername}`}
+					href={`https://github.com/${member.githubUserId}`}
 					target="_blank"
 				>
-					<p>@{member.githubUsername}</p>
+					<p>@{member.githubUserId}</p>
 				</a>
 				<div
-					dangerouslySetInnerHTML={{ __html: member.bio }}
+					dangerouslySetInnerHTML={{ __html: member.teamMember.content }}
 					className="mt-4 space-between-p"
 				/>
 			</div>
