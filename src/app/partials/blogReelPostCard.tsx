@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { CondensedPost } from "@interfaces/condensedPost";
 import DOMPurify from "dompurify";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { JSDOM } from "jsdom";
 import { formatDateAsFriendly } from "@utils/formatDate";
 
@@ -43,9 +43,9 @@ export default function BlogReelPostCard({ post }: BlogReelPostCardProps) {
 								{post.author.node.name}
 							</p>
 							<div className="mt-2">
-								{ReactHtmlParser(
-									DOMPurifyServer.sanitize(post.excerpt)
-								)}
+								   {parse(
+									   DOMPurifyServer.sanitize(post.excerpt)
+								   )}
 							</div>
 						</div>
 					</div>

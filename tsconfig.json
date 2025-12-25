@@ -14,7 +14,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -45,7 +45,7 @@
       ],
       "@validators/*": [
         "./src/validators/*"
-      ],
+      ]
     },
     "target": "ES2017"
   },
@@ -55,7 +55,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/interfaces/**/*.ts",
-    "next-sitemap.config.js"
+    "next-sitemap.config.js",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
